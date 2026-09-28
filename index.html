@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://www.silverlinead.com/">
 <meta property="og:image" content="https://www.silverlinead.com/assets/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Silverline Advertising","alternateName":"Silverline Advertising LLC","url":"https://www.silverlinead.com/","logo":"https://www.silverlinead.com/assets/favicon.png","email":"info@silverlinead.com","telephone":"+971522596385","address":{"@type":"PostalAddress","addressLocality":"Dubai","addressCountry":"AE"},"areaServed":"AE","description":"Promotional stands, exhibition displays, signage, retail displays and event branding."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Silverline Advertising","alternateName":"Silverline Advertising LLC","url":"https://www.silverlinead.com/","logo":"https://www.silverlinead.com/assets/icon.png","description":"Promotional stands, exhibition displays, signage and event branding","address":{"@type":"PostalAddress","addressLocality":"Dubai","addressCountry":"AE"},"contactPoint":{"@type":"ContactPoint","contactType":"Sales","telephone":"+971-52-259-6385","email":"info@silverlinead.com"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,800..900&family=Instrument+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -31,14 +31,14 @@ img{max-width:100%;display:block}
 .h{font-family:var(--head);font-stretch:125%;font-weight:800;text-transform:uppercase;line-height:.95;letter-spacing:-.01em}
 .sv{background:var(--silver);-webkit-background-clip:text;background-clip:text;color:transparent}
 .mono{font-family:var(--mono);text-transform:uppercase;letter-spacing:.2em;font-size:11px}
-.btn{display:inline-flex;align-items:center;gap:12px;padding:14px 26px;border-radius:99px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;border:1px solid transparent;cursor:pointer;transition:.25s}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:14px 26px;border-radius:99px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;border:1px solid transparent;transition:.2s}
 .btn.solid{background:var(--ink);color:#141518}.btn.solid:hover{background:#fff}
 .btn.ghost{border-color:var(--line);color:var(--ink);background:none}.btn.ghost:hover{border-color:var(--ink)}
 :focus-visible{outline:2px solid #c9cdd3;outline-offset:3px}
 section{padding:clamp(56px,7vw,110px) var(--pad)}
 /* header */
-header{position:fixed;inset:0 0 auto 0;z-index:20;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);background:rgba(34,36,40,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.logo{display:flex;align-items:center;gap:10px}.logo img{height:44px;width:auto}
+header{position:fixed;inset:0 0 auto 0;z-index:20;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);background:rgba(34,36,40,.86);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+.logo{display:flex;align-items:center;gap:10px}.logo img{height:56px;width:auto}
 .wm{display:flex;flex-direction:column;align-items:center;line-height:1}
 .wm b{font:600 25px/1 var(--body);letter-spacing:.12em;background:var(--silver);-webkit-background-clip:text;background-clip:text;color:transparent}
 .wm i{display:flex;align-items:center;gap:6px;font:400 8px/1 var(--mono);letter-spacing:.3em;color:#b7bbc2;margin-top:4px;font-style:normal}
@@ -46,7 +46,7 @@ header{position:fixed;inset:0 0 auto 0;z-index:20;height:72px;display:flex;align
 nav{display:flex;gap:clamp(20px,3.4vw,52px)}nav a{font-family:var(--mono);font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:#c4c7cd;transition:.2s}nav a:hover{color:#fff}
 header .btn{padding:12px 22px;font-size:12px}
 /* hero */
-.hero{min-height:100vh;padding-top:0;padding-bottom:0;display:flex;flex-direction:column;justify-content:space-between;position:relative;background:linear-gradient(90deg,rgba(27,28,31,.92) 20%,rgba(27,28,31,.35)),linear-gradient(0deg,rgba(27,28,31,.85),rgba(27,28,31,.3)),url(assets/hero.jpg) center/cover}
+.hero{min-height:100vh;padding-top:0;padding-bottom:0;display:flex;flex-direction:column;justify-content:space-between;position:relative;background:linear-gradient(90deg,rgba(27,28,31,.92) 20%,rgba(27,28,31,.6) 80%),url(assets/hero.jpg);background-size:cover;background-position:center}
 .hero:before,.hero:after{content:"";position:absolute;top:0;bottom:44px;width:1px;background:rgba(255,255,255,.08)}.hero:before{left:24px}.hero:after{right:24px}
 .hero-in{padding-top:120px;padding-bottom:34px}
 .eyebrow{display:flex;align-items:center;gap:14px;color:var(--mute);margin-bottom:22px}.eyebrow:before{content:"";width:10px;height:10px;background:#c9cdd3;transform:rotate(45deg) scale(.7)}
@@ -69,7 +69,7 @@ header .btn{padding:12px 22px;font-size:12px}
 #services{background:var(--bg3);padding-top:clamp(50px,6vw,90px)}
 .sec-t{font-size:clamp(32px,5.1vw,82px);margin-bottom:clamp(30px,4vw,60px)}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line)}
-.tile{min-height:300px;padding:34px 36px;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--line);border-bottom:1px solid var(--line);margin:0 -1px -1px 0;transition:background .3s,color .3s}
+.tile{min-height:300px;padding:34px 36px;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--line);border-bottom:1px solid var(--line);margin:0 -1px -1px 0}
 .tile .top{display:flex;justify-content:space-between;color:var(--mute);font-family:var(--mono);font-size:11px}
 .tile svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;color:#c4c7cd;transition:.3s}
 .tile h3{font-size:clamp(17px,1.9vw,28px);margin-bottom:14px;line-height:1.02}
@@ -109,7 +109,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:32px clamp(24px,4vw,48px)}
 .f label{font-family:var(--mono);font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:#a0a3aa}
 .f input,.f select,.f textarea{background:none;border:0;border-bottom:1px solid #4a4c53;color:var(--ink);font:400 15px var(--body);padding:8px 0 12px;outline:0;border-radius:0;width:100%;transition:.2s}
 .f textarea{resize:vertical;min-height:70px}
-.f select{appearance:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23c4c7cd' stroke-width='2'%3E%3Cpath d='M3 6l5 5 5-5'/%3E%3C/svg%3E") right 4px center no-repeat}
+.f select{appearance:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23c4c7cd' stroke-width='2'%3E%3Cpath d='M3 6l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 0 center;padding-right:20px}
 .f select option{background:#222428;color:var(--ink)}
 .f input::placeholder,.f textarea::placeholder{color:#6d7077}
 .f input:focus,.f select:focus,.f textarea:focus{border-color:#e6e8eb}
@@ -131,8 +131,8 @@ footer{background:#18191c;border-top:1px solid var(--line);padding:60px var(--pa
 .top-b:hover{background:var(--ink);color:#141518}
 /* responsive */
 @media(max-width:1100px){.grid{grid-template-columns:repeat(2,1fr)}.work{grid-template-columns:repeat(3,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.step:nth-child(3){border-left:0}}
-@media(max-width:820px){nav{display:none}.why{grid-template-columns:1fr}.row{grid-template-columns:60px 1fr}.row p{grid-column:2}.fgrid{grid-template-columns:1fr 1fr}.contact-l{grid-column:1/-1}.hero-bar span:nth-child(2){display:none}}
-@media(max-width:600px){.grid,.steps{grid-template-columns:1fr}.step{border-left:0!important;min-height:0}.work{grid-template-columns:1fr 1fr;gap:20px}.tile{min-height:420px}form{grid-template-columns:1fr}.hero .btn{padding:16px 24px}.hero .btn+.btn{margin:12px 0 0}.logo img{height:40px}.wm b{font-size:18px}.header .btn{display:none}}
+@media(max-width:820px){nav{display:none}.why{grid-template-columns:1fr}.row{grid-template-columns:60px 1fr}.row p{grid-column:2}.fgrid{grid-template-columns:1fr 1fr}.contact-l{grid-column:1/-1}.sec-t{margin-bottom:clamp(20px,2vw,30px)}}
+@media(max-width:600px){.grid,.steps{grid-template-columns:1fr}.step{border-left:0!important;min-height:0}.work{grid-template-columns:1fr 1fr;gap:20px}.tile{min-height:420px}form{grid-template-columns:1fr}.fgrid{grid-template-columns:1fr}header{height:auto;flex-wrap:wrap;padding:12px var(--pad)}.logo img{height:48px}}
 </style>
 </head>
 <body>
@@ -149,26 +149,26 @@ footer{background:#18191c;border-top:1px solid var(--line);padding:60px var(--pa
     <h1 class="h">Your vision redefined.</h1>
     <div class="rule"></div>
     <p>We transform brand ideas into physical advertising experiences — stands, displays and environments engineered to get your brand noticed.</p>
-    <a class="btn solid" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a><a class="btn ghost" href="#work">Explore our work</a>
+    <a class="btn solid" href="#contact">Let's talk <span aria-hidden="true">↗</span></a><a class="btn ghost" href="#work">Explore our work</a>
   </div>
   <div class="hero-bar mono"><span>Stands — Displays — Environments</span><span>Scroll ↓</span><span>From idea to installation, under one roof</span></div>
 </section>
 
 <div class="marq" aria-hidden="true"><div class="track h" id="track">
-  <span>Promotional Stands</span><span>Exhibition Displays</span><span>Signage</span><span>Banners &amp; Large Format</span><span>Retail Displays</span><span>Event Branding</span><span>Branding Installations</span><span>Custom Displays</span>
+  <span>Promotional Stands</span><span>Exhibition Displays</span><span>Signage</span><span>Banners &amp; Large Format</span><span>Retail Displays</span><span>Event Branding</span><span>Branding Installations</span><span>Design &amp; Print</span>
 </div></div>
 
 <section id="services">
   <h2 class="sec-t h">Our services</h2>
   <div class="grid">
-    <article class="tile" tabindex="0"><div class="top"><span>/01</span><svg viewBox="0 0 24 24"><path d="M4 9l1.2-5h13.6L20 9M4 9h16M4 9c0 1.7 1.3 2.5 2.7 2.5S9.3 10.7 9.3 9c0 1.7 1.3 2.5 2.7 2.5s2.7-.8 2.7-2.5c0 1.7 1.3 2.5 2.7 2.5S20 10.7 20 9M5 12v8h14v-8M10 20v-4h4v4"/></svg></div><div><h3 class="h">Promotional Stands</h3><p>High-impact stands and kiosks built to launch, sample and sell in the moments that matter.</p></div></article>
-    <article class="tile" tabindex="0"><div class="top"><span>/02</span><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1"/><rect x="13.5" y="3.5" width="7" height="7" rx="1"/><rect x="3.5" y="13.5" width="7" height="7" rx="1"/><rect x="13.5" y="13.5" width="7" height="7" rx="1"/></svg></div><div><h3 class="h">Exhibition Displays</h3><p>Complete exhibition environments — from island stands to modular systems — engineered to draw crowds.</p></div></article>
-    <article class="tile" tabindex="0"><div class="top"><span>/03</span><svg viewBox="0 0 24 24"><path d="M12 3v18M8 21h8M5 6h12l2.5 2.5L17 11H5z"/></svg></div><div><h3 class="h">Signage</h3><p>Dimensional, illuminated and architectural signage that gives your brand a physical voice.</p></div></article>
-    <article class="tile" tabindex="0"><div class="top"><span>/04</span><svg viewBox="0 0 24 24"><path d="M5 21V4M5 4h13l-2.5 4 2.5 4H5"/></svg></div><div><h3 class="h">Banners &amp; Large Format</h3><p>Large-format print and structure that turns walls, facades and skylines into brand media.</p></div></article>
-    <article class="tile" tabindex="0"><div class="top"><span>/05</span><svg viewBox="0 0 24 24"><path d="M5.5 8h13l1 12.5h-15zM9 8V7a3 3 0 016 0v1M9 12a3 3 0 006 0"/></svg></div><div><h3 class="h">Retail Displays</h3><p>Display systems and fixtures that shape how customers move, look and buy in-store.</p></div></article>
-    <article class="tile" tabindex="0"><div class="top"><span>/06</span><svg viewBox="0 0 24 24"><path d="M10 6l1.8 5.2L17 13l-5.2 1.8L10 20l-1.8-5.2L3 13l5.2-1.8zM18 3v5M15.5 5.5h5"/></svg></div><div><h3 class="h">Event Branding</h3><p>Stages, environments and brand moments that carry your identity through every event touchpoint.</p></div></article>
-    <article class="tile" tabindex="0"><div class="top"><span>/07</span><svg viewBox="0 0 24 24"><path d="M14.5 3.5l6 6-3 3-6-6zM12 9l-8 9.5 1.5 1.5L15 12"/></svg></div><div><h3 class="h">Branding Installations</h3><p>Statement installations that transform lobbies, atria and public space into brand territory.</p></div></article>
-    <article class="tile" tabindex="0"><div class="top"><span>/08</span><svg viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9zM4 7.5l8 4.5 8-4.5M12 12v9"/></svg></div><div><h3 class="h">Custom Displays</h3><p>One-off, built-to-spec displays for products and stories that don’t fit a template.</p></div></article>
+    <article class="tile" tabindex="0"><div class="top"><span>/01</span><svg viewBox="0 0 24 24"><path d="M4 9l1.2-5h13.6L20 9M4 9h16M4 9c0 1.7 1.3 2.5 2.7 2.5S9.3 10.7 9.3 9c0 1.7 1.3 2.5 2.7 2.5s2.7-.8 2.7-2.5c0 1.7 1.3 2.5 2.7 2.5s2.7-.8 2.7-2.5"/></svg></div><div><h3 class="h">Promotional Stands</h3><p>Eye-catching stands designed to stop foot traffic and drive engagement at events, expos and activations.</p></div></article>
+    <article class="tile" tabindex="0"><div class="top"><span>/02</span><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1"/><rect x="13.5" y="3.5" width="7" height="7" rx="1"/><rect x="3.5" y="13.5" width="7" height="7" rx="1"/><rect x="13.5" y="13.5" width="7" height="7" rx="1"/></svg></div><div><h3 class="h">Exhibition Displays</h3><p>Complete booth systems and bespoke installations that showcase your brand at trade shows and exhibitions.</p></div></article>
+    <article class="tile" tabindex="0"><div class="top"><span>/03</span><svg viewBox="0 0 24 24"><path d="M12 3v18M8 21h8M5 6h12l2.5 2.5L17 11H5z"/></svg></div><div><h3 class="h">Signage</h3><p>Directional, informational and brand signage that communicates clearly and complements your space.</p></div></article>
+    <article class="tile" tabindex="0"><div class="top"><span>/04</span><svg viewBox="0 0 24 24"><path d="M5 21V4M5 4h13l-2.5 4 2.5 4H5"/></svg></div><div><h3 class="h">Banners &amp; Large Format</h3><p>High-impact printed graphics and banners tailored to your campaign. Indoor and outdoor options.</p></div></article>
+    <article class="tile" tabindex="0"><div class="top"><span>/05</span><svg viewBox="0 0 24 24"><path d="M5.5 8h13l1 12.5h-15zM9 8V7a3 3 0 016 0v1M9 12a3 3 0 006 0"/></svg></div><div><h3 class="h">Retail Displays</h3><p>Point-of-sale fixtures and product displays that enhance the shopping experience and drive sales.</p></div></article>
+    <article class="tile" tabindex="0"><div class="top"><span>/06</span><svg viewBox="0 0 24 24"><path d="M10 6l1.8 5.2L17 13l-5.2 1.8L10 20l-1.8-5.2L3 13l5.2-1.8zM18 3v5M15.5 5.5h5"/></svg></div><div><h3 class="h">Promotions &amp; Gifts</h3><p>Branded merchandise, promotional items and gifts that extend your brand presence beyond the display.</p></div></article>
+    <article class="tile" tabindex="0"><div class="top"><span>/07</span><svg viewBox="0 0 24 24"><path d="M14.5 3.5l6 6-3 3-6-6zM12 9l-8 9.5 1.5 1.5L15 12"/></svg></div><div><h3 class="h">Branding Installations</h3><p>Custom environmental branding that transforms interiors and exteriors into brand experiences.</p></div></article>
+    <article class="tile" tabindex="0"><div class="top"><span>/08</span><svg viewBox="0 0 24 24"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9zM4 7.5l8 4.5 8-4.5M12 12v9"/></svg></div><div><h3 class="h">Design &amp; Print</h3><p>End-to-end design and large-format printing services for all your branding and promotional needs.</p></div></article>
   </div>
 </section>
 
@@ -188,7 +188,7 @@ footer{background:#18191c;border-top:1px solid var(--line);padding:60px var(--pa
   <p class="mono" style="color:var(--mute)">Make your mark</p>
   <h2 class="sec-t h" style="margin:36px 0 0">Why <span class="sv">Silverline</span></h2>
   <div class="why">
-    <p>One partner, zero hand-offs. Our in-house design team, production workshop and supply network cover signage, exhibition stands, branding and print — so you brief one partner instead of five.</p>
+    <p>One partner, zero hand-offs. Our in-house design team, production workshop and supply network cover signage, exhibition stands, branding and print — so you brief one partner instead of fielding three vendors and a production coordinator.</p>
     <div>
       <div class="row"><span class="mono">01</span><h3 class="h sv">Vision</h3><p>We begin with the idea behind the brand — where it needs to go and what it must say — before a single panel is built.</p></div>
       <div class="row"><span class="mono">02</span><h3 class="h">Craft</h3><p>Materials, joinery, light and finish. We obsess over the details most people will feel but never notice.</p></div>
@@ -215,7 +215,7 @@ footer{background:#18191c;border-top:1px solid var(--line);padding:60px var(--pa
     <div class="f"><label for="c">Company</label><input id="c" placeholder="Company / brand" autocomplete="organization"></div>
     <div class="f"><label for="e">Email *</label><input id="e" type="email" required placeholder="you@company.com" autocomplete="email"></div>
     <div class="f"><label for="p">Phone</label><input id="p" type="tel" placeholder="+971 00 000 0000" autocomplete="tel"></div>
-    <div class="f full"><label for="s">Service interested in *</label><select id="s" required><option value="" disabled selected>Select a service</option><option>Promotional Stands</option><option>Exhibition Displays</option><option>Signage</option><option>Banners &amp; Large Format</option><option>Retail Displays</option><option>Event Branding</option><option>Branding Installations</option><option>Custom Displays</option></select></div>
+    <div class="f full"><label for="s">Service interested in *</label><select id="s" required><option value="" disabled selected>Select a service</option><option>Promotional Stands</option><option>Exhibition Displays</option><option>Signage</option><option>Banners &amp; Large Format</option><option>Retail Displays</option><option>Promotions &amp; Gifts</option><option>Branding Installations</option><option>Design &amp; Print</option></select></div>
     <div class="f full"><label for="m">Message *</label><textarea id="m" required placeholder="Tell us about the space, the date, the idea…"></textarea></div>
     <button class="btn solid" type="submit">Start a project <span aria-hidden="true">↗</span></button>
   </form>
@@ -236,10 +236,10 @@ footer{background:#18191c;border-top:1px solid var(--line);padding:60px var(--pa
         <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h2.5V4.5H14a3.5 3.5 0 00-3.5 3.5v2.5H8V14h2.5v6h3.5v-6h2.5l.5-3.5h-3V8.5z"/></svg></a>
       </div>
     </div>
-    <div><h4 class="h">Services</h4><ul><li><a href="#services">Promotional Stands</a></li><li><a href="#services">Exhibition Displays</a></li><li><a href="#services">Signage</a></li><li><a href="#services">Banners &amp; Large Format</a></li><li><a href="#services">Retail Displays</a></li><li><a href="#services">Event Branding</a></li><li><a href="#services">Branding Installations</a></li><li><a href="#services">Custom Displays</a></li></ul></div>
+    <div><h4 class="h">Services</h4><ul><li><a href="#services">Promotional Stands</a></li><li><a href="#services">Exhibition Displays</a></li><li><a href="#services">Signage</a></li><li><a href="#services">Banners &amp; Large Format</a></li><li><a href="#services">Retail Displays</a></li><li><a href="#services">Promotions &amp; Gifts</a></li></ul></div>
     <div><h4 class="h">Menu</h4><ul><li><a href="#services">Services</a></li><li><a href="#work">Work</a></li><li><a href="#about">About</a></li><li><a href="#process">Process</a></li><li><a href="#contact">Contact</a></li></ul></div>
   </div>
-  <div class="fbar mono"><span>© 2026 Silverline Advertising. All rights reserved.</span><span>Make your brand unmissable.</span><button class="top-b" aria-label="Back to top" onclick="scrollTo({top:0})"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button></div>
+  <div class="fbar mono"><span>© 2026 Silverline Advertising. All rights reserved.</span><span>Make your brand unmissable.</span><button class="top-b" aria-label="Back to top" onclick="scrollTo(0,0)"></button></div>
 </footer>
 
 <script>
