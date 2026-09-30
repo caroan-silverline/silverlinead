@@ -1,13 +1,16 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Silverline Advertising — Make Your Brand Unmissable</title>
+
 <meta name="description" content="Silverline Advertising — promotional stands, exhibition displays, signage, retail displays and event branding that make your brand unmissable.">
+
 <link rel="canonical" href="https://www.silverlinead.com/">
 <link rel="icon" type="image/png" href="assets/favicon.png">
+
 <meta name="theme-color" content="#1b1c1f">
 
 <meta property="og:type" content="website">
@@ -44,9 +47,11 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,800..900&family=Instrument+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
   --bg:#1b1c1f;
   --bg2:#222428;
@@ -54,22 +59,31 @@
   --ink:#f3f3f1;
   --mute:#9a9da4;
   --line:#3a3c42;
-  --silver:linear-gradient(100deg,#f4f5f6 0%,#b5bac3 45%,#eceef0 70%,#a9aeb7 100%);
+
+  --silver:linear-gradient(
+    100deg,
+    #f4f5f6 0%,
+    #b5bac3 45%,
+    #eceef0 70%,
+    #a9aeb7 100%
+  );
+
   --head:"Archivo","Arial Black",Arial,sans-serif;
   --body:"Instrument Sans",Arial,sans-serif;
   --mono:"JetBrains Mono",Consolas,monospace;
-  --pad:clamp(20px,4vw,96px)
+
+  --pad:clamp(20px,4vw,96px);
 }
 
 *{
   box-sizing:border-box;
   margin:0;
-  padding:0
+  padding:0;
 }
 
 html{
   scroll-behavior:smooth;
-  scroll-padding-top:90px
+  scroll-padding-top:90px;
 }
 
 body{
@@ -78,21 +92,21 @@ body{
   font-family:var(--body);
   font-size:15px;
   line-height:1.6;
-  -webkit-font-smoothing:antialiased
+  -webkit-font-smoothing:antialiased;
 }
 
 body.modal-open{
-  overflow:hidden
+  overflow:hidden;
 }
 
 a{
   color:inherit;
-  text-decoration:none
+  text-decoration:none;
 }
 
 img{
   max-width:100%;
-  display:block
+  display:block;
 }
 
 .h{
@@ -101,1023 +115,1512 @@ img{
   font-weight:800;
   text-transform:uppercase;
   line-height:.95;
-  letter-spacing:-.01em
+  letter-spacing:-.01em;
 }
 
 .sv{
   background:var(--silver);
   -webkit-background-clip:text;
   background-clip:text;
-  color:transparent
+  color:transparent;
 }
 
 .mono{
   font-family:var(--mono);
   text-transform:uppercase;
   letter-spacing:.2em;
-  font-size:11px
+  font-size:11px;
 }
 
 .btn{
   display:inline-flex;
   align-items:center;
+  justify-content:center;
   gap:12px;
+
   padding:14px 26px;
+
   border-radius:99px;
+
   font-family:var(--mono);
   font-size:11px;
   letter-spacing:.2em;
   text-transform:uppercase;
+
   border:1px solid transparent;
+
   transition:.2s;
-  cursor:pointer
+  cursor:pointer;
+
+  white-space:nowrap;
 }
 
 .btn.solid{
   background:var(--ink);
-  color:#141518
+  color:#141518;
 }
 
 .btn.solid:hover{
-  background:#fff
+  background:#fff;
 }
 
 .btn.ghost{
   border-color:var(--line);
   color:var(--ink);
-  background:none
+  background:none;
 }
 
 .btn.ghost:hover{
-  border-color:var(--ink)
+  border-color:var(--ink);
 }
 
 :focus-visible{
   outline:2px solid #c9cdd3;
-  outline-offset:3px
+  outline-offset:3px;
 }
 
 section{
-  padding:clamp(56px,7vw,110px) var(--pad)
+  padding:clamp(56px,7vw,110px) var(--pad);
 }
 
-/* header */
+
+/* =========================
+   HEADER
+========================= */
 
 header{
   position:fixed;
   inset:0 0 auto 0;
   z-index:20;
-  height:72px;
-  display:flex;
+
+  min-height:72px;
+
+  display:grid;
+
+  /*
+    Three separate areas:
+    logo | navigation | buttons
+    This prevents the navigation from sitting over the logo.
+  */
+  grid-template-columns:auto minmax(0,1fr) auto;
+
   align-items:center;
-  justify-content:space-between;
-  padding:0 var(--pad);
-  background:rgba(34,36,40,.86);
+
+  column-gap:clamp(20px,3vw,48px);
+
+  padding:8px var(--pad);
+
+  background:rgba(34,36,40,.90);
   backdrop-filter:blur(10px);
-  border-bottom:1px solid rgba(255,255,255,.08)
+
+  border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .logo{
   display:flex;
   align-items:center;
-  gap:10px
+  gap:10px;
+
+  flex-shrink:0;
+
+  min-width:max-content;
 }
 
 .logo img{
   height:56px;
-  width:auto
+  width:auto;
+  flex-shrink:0;
 }
 
 .wm{
   display:flex;
   flex-direction:column;
   align-items:center;
-  line-height:1
+
+  line-height:1;
+
+  flex-shrink:0;
 }
 
 .wm b{
   font:600 25px/1 var(--body);
   letter-spacing:.12em;
+
   background:var(--silver);
   -webkit-background-clip:text;
   background-clip:text;
-  color:transparent
+
+  color:transparent;
 }
 
 .wm i{
   display:flex;
   align-items:center;
   gap:6px;
+
   font:400 8px/1 var(--mono);
   letter-spacing:.3em;
+
   color:#b7bbc2;
+
   margin-top:4px;
-  font-style:normal
+
+  font-style:normal;
 }
 
 .wm i:before,
 .wm i:after{
   content:"";
+
   width:22px;
   height:1px;
-  background:#b7bbc2
+
+  background:#b7bbc2;
 }
+
+
+/* Navigation */
 
 nav{
   display:flex;
-  gap:clamp(20px,3.4vw,52px)
+  align-items:center;
+  justify-content:center;
+
+  gap:clamp(14px,2.4vw,38px);
+
+  min-width:0;
 }
 
 nav a{
   font-family:var(--mono);
-  font-size:13px;
-  letter-spacing:.24em;
+
+  font-size:11px;
+
+  letter-spacing:.16em;
+
   text-transform:uppercase;
+
   color:#c4c7cd;
-  transition:.2s
+
+  transition:.2s;
+
+  white-space:nowrap;
 }
 
 nav a:hover{
-  color:#fff
+  color:#fff;
 }
 
-header .btn{
-  padding:12px 22px;
-  font-size:12px
-}
+
+/* Header buttons */
 
 .header-btns{
   display:flex;
-  gap:8px
+  align-items:center;
+  justify-content:flex-end;
+
+  gap:8px;
+
+  flex-shrink:0;
 }
 
-/* hero */
+header .btn{
+  padding:11px 18px;
+  font-size:10px;
+}
+
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
   min-height:100vh;
+
   padding-top:0;
   padding-bottom:0;
+
   display:flex;
   flex-direction:column;
   justify-content:space-between;
+
   position:relative;
+
   background:
-    linear-gradient(90deg,rgba(27,28,31,.92) 20%,rgba(27,28,31,.82) 80%),
+    linear-gradient(
+      90deg,
+      rgba(27,28,31,.92) 20%,
+      rgba(27,28,31,.82) 80%
+    ),
     url(assets/hero.jpg) center/cover no-repeat;
+
   background-size:cover;
-  background-position:center
+  background-position:center;
 }
 
 .hero:before,
 .hero:after{
   content:"";
+
   position:absolute;
+
   top:0;
   bottom:44px;
+
   width:1px;
-  background:rgba(255,255,255,.08)
+
+  background:rgba(255,255,255,.08);
 }
 
 .hero:before{
-  left:24px
+  left:24px;
 }
 
 .hero:after{
-  right:24px
+  right:24px;
 }
 
 .hero-in{
-  padding-top:120px;
-  padding-bottom:34px
+  padding-top:150px;
+  padding-bottom:34px;
 }
 
 .eyebrow{
   display:flex;
   align-items:center;
+
   gap:14px;
+
   color:var(--mute);
-  margin-bottom:22px
+
+  margin-bottom:22px;
 }
 
 .eyebrow:before{
   content:"";
+
   width:10px;
   height:10px;
+
   background:#c9cdd3;
-  transform:rotate(45deg) scale(.7)
+
+  transform:rotate(45deg) scale(.7);
 }
 
 .hero h1{
   font-size:clamp(38px,6.9vw,110px);
+
   max-width:12ch;
+
   background:var(--silver);
   -webkit-background-clip:text;
   background-clip:text;
-  color:transparent
+
+  color:transparent;
 }
 
 .rule{
   width:170px;
   max-width:60%;
+
   height:3px;
+
   background:var(--silver);
+
   margin:30px 0 26px;
-  border-radius:2px
+
+  border-radius:2px;
 }
 
 .hero p{
   max-width:430px;
+
   font-size:clamp(15px,1.5vw,21px);
+
   color:#b9bcc3;
+
   line-height:1.5;
-  margin-bottom:34px
+
+  margin-bottom:34px;
 }
 
 .hero .btn+.btn{
-  margin-left:8px
+  margin-left:8px;
 }
 
 .hero .eyebrow{
   font-size:11px;
+
   max-width:none;
+
   margin-bottom:22px;
-  line-height:1.4
+
+  line-height:1.4;
 }
 
 .hero-bar{
   display:flex;
+
   justify-content:space-between;
+
   gap:20px;
+
   padding:20px var(--pad);
+
   border-top:1px solid var(--line);
+
   color:var(--mute);
+
   height:44px;
-  font-size:10px
+
+  font-size:10px;
 }
 
-/* marquee */
+
+/* =========================
+   MARQUEE
+========================= */
 
 .marq{
   overflow:hidden;
+
   border-bottom:1px solid var(--line);
+
   background:var(--bg3);
-  padding:34px 0
+
+  padding:34px 0;
 }
 
 .track{
   display:flex;
+
   gap:24px;
+
   width:max-content;
-  animation:mv 32s linear infinite
+
+  animation:mv 32s linear infinite;
 }
 
 .track span{
   font-size:clamp(30px,4.6vw,66px);
+
   white-space:nowrap;
+
   display:flex;
   align-items:center;
-  gap:24px
+
+  gap:24px;
 }
 
 .track span:nth-child(even){
   color:transparent;
-  -webkit-text-stroke:1.5px #6f727a
+
+  -webkit-text-stroke:1.5px #6f727a;
 }
 
 .track span:after{
   content:"";
+
   width:12px;
   height:12px;
+
   background:#a9aeb7;
+
   transform:rotate(45deg) scale(.8);
-  flex:none
+
+  flex:none;
 }
 
 @keyframes mv{
   to{
-    transform:translateX(-50%)
+    transform:translateX(-50%);
   }
 }
 
 .marq:hover .track{
-  animation-play-state:paused
+  animation-play-state:paused;
 }
 
 @media (prefers-reduced-motion:reduce){
+
   .track{
-    animation:none
+    animation:none;
   }
 
   html{
-    scroll-behavior:auto
+    scroll-behavior:auto;
   }
+
 }
 
-/* branding solutions */
+
+/* =========================
+   BRANDING SOLUTIONS
+========================= */
 
 #services{
   background:var(--bg3);
-  padding-top:clamp(50px,6vw,90px)
+
+  padding-top:clamp(50px,6vw,90px);
 }
 
 .sec-t{
   font-size:clamp(32px,5.1vw,82px);
+
   margin-bottom:clamp(30px,4vw,60px);
+
   background:var(--silver);
+
   -webkit-background-clip:text;
   background-clip:text;
-  color:transparent
+
+  color:transparent;
 }
 
 .grid{
   display:grid;
+
   grid-template-columns:repeat(4,1fr);
-  border:1px solid var(--line)
+
+  border:1px solid var(--line);
 }
 
 .tile{
   min-height:300px;
+
   padding:34px 36px;
+
   display:flex;
   flex-direction:column;
   justify-content:space-between;
+
   border-right:1px solid var(--line);
   border-bottom:1px solid var(--line);
-  margin:0 -1px -1px 0
+
+  margin:0 -1px -1px 0;
+
+  transition:.2s;
 }
 
 .tile .top{
   display:flex;
+
   justify-content:space-between;
+
   color:var(--mute);
+
   font-family:var(--mono);
-  font-size:11px
+
+  font-size:11px;
 }
 
 .tile svg{
   width:26px;
   height:26px;
+
   fill:none;
+
   stroke:currentColor;
+
   stroke-width:1.4;
+
   stroke-linecap:round;
   stroke-linejoin:round;
+
   color:#c4c7cd;
-  transition:.3s
+
+  transition:.3s;
 }
 
 .tile h3{
   font-size:clamp(17px,1.9vw,28px);
+
   margin-bottom:14px;
-  line-height:1.02
+
+  line-height:1.02;
 }
 
 .tile p{
   color:var(--mute);
+
   font-size:14px;
+
   line-height:1.6;
-  transition:.3s
+
+  transition:.3s;
 }
 
 .tile:hover{
   background:var(--ink);
-  color:#141518
+
+  color:#141518;
 }
 
 .tile:hover p,
 .tile:hover .top{
-  color:#5b5e65
+  color:#5b5e65;
 }
 
 .tile:hover svg{
-  color:#141518
+  color:#141518;
 }
 
 .tile:focus-visible{
-  outline-offset:-3px
+  outline-offset:-3px;
 }
 
-/* work */
+
+/* =========================
+   WORK
+========================= */
 
 #work{
-  background:var(--bg)
+  background:var(--bg);
 }
 
 .work{
   display:grid;
+
   grid-template-columns:repeat(6,1fr);
-  gap:20px
+
+  gap:20px;
 }
 
 .work figure img{
   width:100%;
+
   aspect-ratio:1;
-  object-fit:cover
+
+  object-fit:cover;
 }
 
 .work figcaption{
   margin-top:14px;
+
   color:var(--mute);
+
   font-family:var(--mono);
+
   font-size:11px;
+
   letter-spacing:.2em;
+
   text-transform:uppercase;
-  line-height:1.9
+
+  line-height:1.9;
 }
 
-/* why */
+
+/* =========================
+   WHY
+========================= */
 
 #about{
-  background:var(--bg2)
+  background:var(--bg2);
 }
 
 .why{
   display:grid;
+
   grid-template-columns:1fr 1.3fr;
+
   gap:clamp(24px,4vw,64px);
-  margin-top:clamp(30px,3.5vw,54px)
+
+  margin-top:clamp(30px,3.5vw,54px);
 }
 
 .why>p{
   font-size:clamp(16px,1.6vw,22px);
+
   color:#b3b6bd;
+
   line-height:1.55;
-  max-width:26ch
+
+  max-width:26ch;
 }
 
 .row{
   display:grid;
+
   grid-template-columns:70px 1fr 1.4fr;
+
   gap:16px;
+
   padding:26px 0;
-  border-top:1px solid var(--line)
+
+  border-top:1px solid var(--line);
 }
 
 .row:last-child{
-  border-bottom:1px solid var(--line)
+  border-bottom:1px solid var(--line);
 }
 
 .row .mono{
   color:var(--mute);
-  padding-top:6px
+
+  padding-top:6px;
 }
 
 .row h3{
   font-size:clamp(22px,2.6vw,38px);
-  transition:.3s
+
+  transition:.3s;
 }
 
 .row p{
   color:#a0a3aa;
+
   font-size:clamp(14px,1.3vw,18px);
-  line-height:1.5
+
+  line-height:1.5;
 }
 
 .row:hover h3{
   background:var(--silver);
+
   -webkit-background-clip:text;
   background-clip:text;
-  color:transparent
+
+  color:transparent;
 }
 
 .why-copy{
   margin-top:32px;
+
   max-width:620px;
+
   color:#b3b6bd;
+
   font-size:clamp(15px,1.4vw,19px);
-  line-height:1.6
+
+  line-height:1.6;
 }
 
 .diamond{
   width:42px;
   height:42px;
+
   border:1px solid #aeb3bb;
+
   transform:rotate(45deg);
+
   margin:0 0 28px 6px;
-  position:relative
+
+  position:relative;
 }
 
 .diamond:after{
   content:"";
+
   position:absolute;
+
   inset:9px;
-  border:1px solid #62666e
+
+  border:1px solid #62666e;
 }
 
-/* process */
+
+/* =========================
+   PROCESS
+========================= */
 
 #process{
-  background:var(--bg)
+  background:var(--bg);
 }
 
 .steps{
   display:grid;
+
   grid-template-columns:repeat(4,1fr);
-  border-top:1px solid var(--line)
+
+  border-top:1px solid var(--line);
 }
 
 .step{
   padding:44px 16px 34px 0;
+
   border-left:1px solid var(--line);
+
   padding-left:0;
-  min-height:300px
+
+  min-height:300px;
 }
 
 .step:first-child{
-  border-left:0
+  border-left:0;
 }
 
 .step .n{
   font-size:clamp(44px,5vw,72px);
+
   color:transparent;
+
   -webkit-text-stroke:1px #6a6d75;
+
   margin-bottom:30px;
-  display:block
+
+  display:block;
 }
 
 .step h3{
   font-size:clamp(19px,1.8vw,26px);
-  margin-bottom:16px
+
+  margin-bottom:16px;
 }
 
 .step p{
   color:#9a9da4;
+
   font-size:clamp(14px,1.1vw,16px);
+
   max-width:26ch;
-  margin-bottom:34px
+
+  margin-bottom:34px;
 }
 
 .step:after{
   content:"";
+
   display:block;
+
   width:40px;
   height:1px;
-  background:#8b8f97
+
+  background:#8b8f97;
 }
 
-/* contact */
+
+/* =========================
+   CONTACT
+========================= */
 
 #contact{
-  background:var(--bg)
+  background:var(--bg);
 }
 
 .contact h2{
   font-size:clamp(30px,4.6vw,72px);
+
   max-width:14ch;
-  margin-bottom:clamp(30px,4vw,56px)
+
+  margin-bottom:clamp(30px,4vw,56px);
 }
 
 form{
   display:grid;
+
   grid-template-columns:1fr 1fr;
-  gap:32px clamp(24px,4vw,48px)
+
+  gap:32px clamp(24px,4vw,48px);
 }
 
 .f{
   display:flex;
+
   flex-direction:column;
-  gap:6px
+
+  gap:6px;
 }
 
 .f.full{
-  grid-column:1/-1
+  grid-column:1/-1;
 }
 
 .f label{
   font-family:var(--mono);
+
   font-size:13px;
+
   letter-spacing:.24em;
+
   text-transform:uppercase;
-  color:#a0a3aa
+
+  color:#a0a3aa;
 }
 
 .f input,
 .f select,
 .f textarea{
   background:none;
+
   border:0;
+
   border-bottom:1px solid #4a4c53;
+
   color:var(--ink);
+
   font:400 15px var(--body);
+
   padding:8px 0 12px;
+
   outline:0;
+
   border-radius:0;
+
   width:100%;
-  transition:.2s
+
+  transition:.2s;
 }
 
 .f textarea{
   resize:vertical;
-  min-height:70px
+
+  min-height:70px;
 }
 
 .f select{
   appearance:none;
-  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23c4c7cd' stroke-width='2'%3E%3Cpath d='M3 6l5 5 5-5'/%3E%3C/svg%3E") right 6px center/16px 16px no-repeat;
+
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23c4c7cd' stroke-width='2'%3E%3Cpath d='M3 6l5 5 5-5'/%3E%3C/svg%3E")
+    right 6px center/16px 16px no-repeat;
+
   padding-right:26px;
-  background-color:transparent
+
+  background-color:transparent;
 }
 
 .f select option{
   background:#222428;
-  color:var(--ink)
+
+  color:var(--ink);
 }
 
 .f input::placeholder,
 .f textarea::placeholder{
-  color:#6d7077
+  color:#6d7077;
 }
 
 .f input:focus,
 .f select:focus,
 .f textarea:focus{
-  border-color:#e6e8eb
+  border-color:#e6e8eb;
 }
 
 form .btn{
   justify-self:start;
+
   padding:20px 44px;
+
   font-size:13px;
-  border:0
+
+  border:0;
 }
 
 .form-status{
   grid-column:1/-1;
+
   display:none;
+
   padding:16px 20px;
+
   border:1px solid var(--line);
+
   color:#c8cbd1;
-  font-size:14px
+
+  font-size:14px;
 }
 
 .form-status.show{
-  display:block
+  display:block;
 }
 
 .form-status.success{
-  border-color:#7e858f
+  border-color:#7e858f;
 }
 
-/* company profile modal */
+
+/* =========================
+   COMPANY PROFILE MODAL
+========================= */
 
 .profile-modal{
   position:fixed;
+
   inset:0;
+
   z-index:100;
+
   display:none;
+
   align-items:center;
   justify-content:center;
+
   padding:24px;
+
   background:rgba(10,11,13,.82);
-  backdrop-filter:blur(14px)
+
+  backdrop-filter:blur(14px);
 }
 
 .profile-modal.open{
-  display:flex
+  display:flex;
 }
 
 .profile-card{
   position:relative;
+
   width:min(620px,100%);
+
   max-height:90vh;
+
   overflow:auto;
+
   background:var(--bg2);
+
   border:1px solid var(--line);
-  padding:clamp(30px,5vw,60px)
+
+  padding:clamp(30px,5vw,60px);
 }
 
 .profile-close{
   position:absolute;
+
   top:18px;
   right:18px;
+
   width:40px;
   height:40px;
+
   border:1px solid var(--line);
+
   border-radius:50%;
+
   background:none;
+
   color:var(--ink);
+
   cursor:pointer;
-  font-size:20px
+
+  font-size:20px;
 }
 
 .profile-close:hover{
   background:var(--ink);
-  color:#141518
+
+  color:#141518;
 }
 
 .profile-card .eyebrow{
-  margin-bottom:18px
+  margin-bottom:18px;
 }
 
 .profile-card h2{
   font-size:clamp(38px,6vw,70px);
-  margin-bottom:24px
+
+  margin-bottom:24px;
 }
 
 .profile-card>p{
   color:#aeb1b8;
+
   max-width:480px;
+
   margin-bottom:34px;
-  line-height:1.6
+
+  line-height:1.6;
 }
 
 .profile-form{
   display:flex;
+
   flex-direction:column;
-  gap:20px
+
+  gap:20px;
 }
 
 .profile-form .f{
-  width:100%
+  width:100%;
 }
 
 .profile-form .btn{
-  align-self:flex-start
+  align-self:flex-start;
 }
 
 .profile-success{
-  display:none
+  display:none;
 }
 
 .profile-success.show{
-  display:block
+  display:block;
 }
 
 .profile-success p{
   color:#b8bbc2;
-  margin:20px 0 28px
+
+  margin:20px 0 28px;
 }
 
 .profile-note{
   color:#777b83;
+
   font-size:11px;
+
   margin-top:20px;
-  line-height:1.5
+
+  line-height:1.5;
 }
 
-/* footer */
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
   background:#18191c;
+
   border-top:1px solid var(--line);
-  padding:60px var(--pad) 28px
+
+  padding:60px var(--pad) 28px;
 }
 
 .fgrid{
   display:grid;
+
   grid-template-columns:2fr 1fr 1fr;
+
   gap:40px;
-  margin-bottom:56px
+
+  margin-bottom:56px;
 }
 
 .fgrid img{
   width:110px;
-  margin:0 0 28px
+
+  margin:0 0 28px;
 }
 
 .fgrid a,
 .fgrid li{
   color:#c0c3c9;
+
   font-size:14px;
+
   line-height:1;
-  list-style:none
+
+  list-style:none;
 }
 
 .fgrid li{
-  margin-bottom:16px
+  margin-bottom:16px;
 }
 
 .fgrid a:hover{
-  color:#fff
+  color:#fff;
 }
 
 .fgrid h4{
   font-size:clamp(22px,2.4vw,34px);
-  margin-bottom:30px
+
+  margin-bottom:30px;
 }
 
 .contact-l p{
   color:#c0c3c9;
+
   font-size:14px;
-  margin-bottom:12px
+
+  margin-bottom:12px;
 }
 
 .contact-l .ph{
-  color:#7f838b
+  color:#7f838b;
 }
 
 .soc{
   display:flex;
+
   gap:12px;
-  margin-top:40px
+
+  margin-top:40px;
 }
 
 .soc a{
   width:44px;
   height:44px;
+
   border:1px solid var(--line);
+
   border-radius:50%;
+
   display:grid;
+
   place-items:center;
-  transition:.2s
+
+  transition:.2s;
 }
 
 .soc a:hover{
   background:var(--ink);
-  color:#141518
+
+  color:#141518;
 }
 
 .soc svg{
   width:16px;
   height:16px;
+
   fill:none;
+
   stroke:currentColor;
+
   stroke-width:1.5;
+
   stroke-linecap:round;
-  stroke-linejoin:round
+  stroke-linejoin:round;
 }
 
 .fbar{
   border-top:1px solid var(--line);
+
   padding-top:24px;
+
   display:flex;
+
   justify-content:space-between;
+
   align-items:center;
+
   gap:20px;
+
   color:var(--mute);
+
   font-size:10px;
-  flex-wrap:wrap
+
+  flex-wrap:wrap;
 }
 
 .top-b{
   width:44px;
   height:44px;
+
   border:1px solid var(--line);
+
   border-radius:50%;
+
   display:grid;
+
   place-items:center;
+
   background:none;
+
   color:var(--ink);
-  cursor:pointer
+
+  cursor:pointer;
 }
 
 .top-b:hover{
   background:var(--ink);
-  color:#141518
+
+  color:#141518;
 }
 
-/* responsive */
 
-@media(max-width:1100px){
-  .grid{
-    grid-template-columns:repeat(2,1fr)
+/* =========================
+   RESPONSIVE
+========================= */
+
+/*
+  Important header fix:
+  At this width there isn't enough room for
+  logo + full navigation + buttons.
+  Hide navigation BEFORE overlap can happen.
+*/
+
+@media(max-width:1250px){
+
+  header{
+    grid-template-columns:auto auto;
+
+    justify-content:space-between;
   }
 
-  .work{
-    grid-template-columns:repeat(3,1fr)
+  header nav{
+    display:none;
   }
 
-  .steps{
-    grid-template-columns:repeat(2,1fr)
-  }
-
-  .step:nth-child(3){
-    border-left:0
-  }
 }
+
+
+/* Tablet */
 
 @media(max-width:820px){
-  nav{
-    display:none
+
+  header{
+    min-height:70px;
+
+    padding:8px 20px;
+
+    column-gap:12px;
   }
 
-  .why{
-    grid-template-columns:1fr
+  .logo img{
+    height:48px;
   }
 
-  .row{
-    grid-template-columns:60px 1fr
+  .wm b{
+    font-size:21px;
   }
 
-  .row p{
-    grid-column:2
-  }
-
-  .fgrid{
-    grid-template-columns:1fr 1fr
-  }
-
-  .contact-l{
-    grid-column:1/-1
-  }
-
-  .sec-t{
-    margin-bottom:30px
+  .wm i{
+    font-size:7px;
   }
 
   .header-btns{
-    flex-direction:column;
-    gap:6px
+    gap:6px;
+  }
+
+  header .btn{
+    padding:10px 14px;
+
+    font-size:9px;
+
+    letter-spacing:.14em;
+  }
+
+  .why{
+    grid-template-columns:1fr;
+  }
+
+  .row{
+    grid-template-columns:60px 1fr;
+  }
+
+  .row p{
+    grid-column:2;
+  }
+
+  .fgrid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .contact-l{
+    grid-column:1/-1;
+  }
+
+  .sec-t{
+    margin-bottom:30px;
   }
 
   .fgrid .menu-col{
-    grid-column:1/-1
+    grid-column:1/-1;
   }
+
 }
 
+
+/* Mobile */
+
 @media(max-width:600px){
+
+  header{
+    padding:8px 16px;
+  }
+
+  .logo{
+    gap:7px;
+  }
+
+  .logo img{
+    height:43px;
+  }
+
+  .wm b{
+    font-size:18px;
+  }
+
+  .wm i{
+    font-size:6px;
+
+    letter-spacing:.2em;
+  }
+
+  .wm i:before,
+  .wm i:after{
+    width:14px;
+  }
+
+  .header-btns{
+    gap:5px;
+  }
+
+  header .btn{
+    padding:9px 11px;
+
+    font-size:8px;
+
+    letter-spacing:.1em;
+  }
+
+  header .btn:first-child{
+    display:none;
+  }
+
+
   .grid,
   .steps{
-    grid-template-columns:1fr
+    grid-template-columns:1fr;
   }
 
   .step{
     border-left:0!important;
-    min-height:0
+
+    min-height:0;
   }
 
   .work{
     grid-template-columns:1fr 1fr;
-    gap:20px
+
+    gap:20px;
   }
 
   .tile{
-    min-height:420px
+    min-height:420px;
   }
 
   form{
-    grid-template-columns:1fr
+    grid-template-columns:1fr;
   }
 
   .fgrid{
-    grid-template-columns:1fr
+    grid-template-columns:1fr;
   }
 
   .hero-bar{
-    display:none
+    display:none;
   }
 
   .hero-in{
-    padding-top:106px
+    padding-top:106px;
   }
 
   .hero h1{
-    max-width:7ch
-  }
-
-  .logo img{
-    height:48px
+    max-width:7ch;
   }
 
   .btn{
-    padding:12px 18px
+    padding:12px 18px;
   }
 
   .header-btns .btn{
-    padding:10px 16px;
-    font-size:11px
+    padding:9px 11px;
+
+    font-size:8px;
   }
+
 }
+
+
+/* Very small phones */
+
+@media(max-width:390px){
+
+  .wm{
+    display:none;
+  }
+
+  .logo img{
+    height:44px;
+  }
+
+  header .btn{
+    font-size:8px;
+
+    padding:9px 12px;
+  }
+
+}
+
+
+/* =========================
+   HTML
+========================= */
+
 </style>
 </head>
 
 <body>
 
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
+
   <a class="logo" href="#top" aria-label="Silverline Advertising">
+
     <img src="assets/icon.png" alt="">
+
     <span class="wm">
+
       <b>SILVERLINE</b>
+
       <i>ADVERTISING</i>
+
     </span>
+
   </a>
 
+
   <nav aria-label="Main">
+
     <a href="#services">Branding Solutions</a>
+
     <a href="#work">Featured Projects</a>
+
     <a href="#about">Why Silverline</a>
+
     <a href="#process">How We Do It</a>
+
   </nav>
 
+
   <div class="header-btns">
+
     <a class="btn solid" href="#contact">
-      Let's Connect <span aria-hidden="true">↗</span>
+
+      Let's Connect
+
+      <span aria-hidden="true">↗</span>
+
     </a>
 
-    <button class="btn ghost" type="button" id="profileOpen">
-      Company Profile <span aria-hidden="true">↗</span>
+    <button
+      class="btn ghost"
+      type="button"
+      id="profileOpen"
+    >
+
+      Company Profile
+
+      <span aria-hidden="true">↗</span>
+
     </button>
+
   </div>
+
 </header>
+
 
 <main id="top">
 
+
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
+
   <div class="hero-in">
 
-    <p class="eyebrow mono">Designed to craft your presence</p>
+    <p class="eyebrow mono">
+      Designed to craft your presence
+    </p>
 
-    <h1 class="h">Your vision redefined.</h1>
+    <h1 class="h">
+      Your vision redefined.
+    </h1>
 
     <div class="rule"></div>
 
@@ -1129,7 +1632,11 @@ footer{
     </p>
 
     <a class="btn solid" href="#contact">
-      Let's Connect <span aria-hidden="true">↗</span>
+
+      Let's Connect
+
+      <span aria-hidden="true">↗</span>
+
     </a>
 
     <a class="btn ghost" href="#work">
@@ -1138,480 +1645,1155 @@ footer{
 
   </div>
 
+
   <div class="hero-bar mono">
-    <span>Stands — Displays — Environments</span>
-    <span>Scroll ↓</span>
-    <span>From idea to installation, under one roof</span>
+
+    <span>
+      Stands — Displays — Environments
+    </span>
+
+    <span>
+      Scroll ↓
+    </span>
+
+    <span>
+      From idea to installation, under one roof
+    </span>
+
   </div>
+
 </section>
 
+
+<!-- =========================
+     MARQUEE
+========================= -->
+
 <div class="marq" aria-hidden="true">
+
   <div class="track h" id="track">
+
     <span>Promotional Stands</span>
+
     <span>Exhibition Displays</span>
+
     <span>Signage</span>
+
     <span>Banners &amp; Large Format</span>
+
     <span>Retail Displays</span>
+
     <span>Event Branding</span>
+
     <span>Branding Installations</span>
+
     <span>Design &amp; Print</span>
+
   </div>
+
 </div>
+
+
+<!-- =========================
+     BRANDING SOLUTIONS
+========================= -->
 
 <section id="services">
 
-  <h2 class="sec-t h">Our Branding Solutions</h2>
+  <h2 class="sec-t h">
+    Our Branding Solutions
+  </h2>
+
 
   <div class="grid">
 
-    <article class="tile" tabindex="0">
-      <div class="top">
-        <span>/01</span>
-        <svg viewBox="0 0 24 24">
-          <path d="M4 9l1.2-5h13.6L20 9M4 9h16M4 9c0 1.7 1.3 2.5 2.7 2.5S9.3 10.7 9.3 9c0 1.7 1.3 2.5 2.7 2.5s2.7-.8 2.7-2.5M4 9v6.5M20 9v6.5M9.5 15.5h5"/>
-        </svg>
-      </div>
-      <div>
-        <h3 class="h">Promotional Stands</h3>
-        <p>Eye-catching stands designed to stop foot traffic and drive engagement at events, expos and activations.</p>
-      </div>
-    </article>
+
+    <!-- 01 -->
 
     <article class="tile" tabindex="0">
+
       <div class="top">
-        <span>/02</span>
+
+        <span>/01</span>
+
         <svg viewBox="0 0 24 24">
+
+          <path d="M4 9l1.2-5h13.6L20 9M4 9h16M4 9c0 1.7 1.3 2.5 2.7 2.5S9.3 10.7 9.3 9c0 1.7 1.3 2.5 2.7 2.5s2.7-.8 2.7-2.5M4 9v6.5M20 9v6.5M9.5 15.5h5"/>
+
+        </svg>
+
+      </div>
+
+
+      <div>
+
+        <h3 class="h">
+          Promotional Stands
+        </h3>
+
+        <p>
+          Eye-catching stands designed to stop foot traffic and drive engagement at events, expos and activations.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- 02 -->
+
+    <article class="tile" tabindex="0">
+
+      <div class="top">
+
+        <span>/02</span>
+
+        <svg viewBox="0 0 24 24">
+
           <rect x="3.5" y="3.5" width="7" height="7" rx="1"/>
           <rect x="13.5" y="3.5" width="7" height="7" rx="1"/>
           <rect x="3.5" y="13.5" width="7" height="7" rx="1"/>
           <rect x="13.5" y="13.5" width="7" height="7" rx="1"/>
+
         </svg>
+
       </div>
+
+
       <div>
-        <h3 class="h">Exhibition Displays</h3>
-        <p>Complete booth systems and bespoke installations that showcase your brand at trade shows and exhibitions.</p>
+
+        <h3 class="h">
+          Exhibition Displays
+        </h3>
+
+        <p>
+          Complete booth systems and bespoke installations that showcase your brand at trade shows and exhibitions.
+        </p>
+
       </div>
+
     </article>
 
+
+    <!-- 03 -->
+
     <article class="tile" tabindex="0">
+
       <div class="top">
+
         <span>/03</span>
+
         <svg viewBox="0 0 24 24">
+
           <path d="M12 3v18M8 21h8M5 6h12l2.5 2.5L17 11H5z"/>
+
         </svg>
+
       </div>
+
+
       <div>
-        <h3 class="h">Signage</h3>
-        <p>Directional, informational and brand signage that communicates clearly and complements your space.</p>
+
+        <h3 class="h">
+          Signage
+        </h3>
+
+        <p>
+          Directional, informational and brand signage that communicates clearly and complements your space.
+        </p>
+
       </div>
+
     </article>
 
+
+    <!-- 04 -->
+
     <article class="tile" tabindex="0">
+
       <div class="top">
+
         <span>/04</span>
+
         <svg viewBox="0 0 24 24">
+
           <path d="M5 21V4M5 4h13l-2.5 4 2.5 4H5"/>
+
         </svg>
+
       </div>
+
+
       <div>
-        <h3 class="h">Banners &amp; Large Format</h3>
-        <p>High-impact printed graphics and banners tailored to your campaign. Indoor and outdoor options.</p>
+
+        <h3 class="h">
+          Banners &amp; Large Format
+        </h3>
+
+        <p>
+          High-impact printed graphics and banners tailored to your campaign. Indoor and outdoor options.
+        </p>
+
       </div>
+
     </article>
 
+
+    <!-- 05 -->
+
     <article class="tile" tabindex="0">
+
       <div class="top">
+
         <span>/05</span>
+
         <svg viewBox="0 0 24 24">
+
           <path d="M5.5 8h13l1 12.5h-15zM9 8V7a3 3 0 016 0v1M9 12a3 3 0 006 0"/>
+
         </svg>
+
       </div>
+
+
       <div>
-        <h3 class="h">Retail Displays</h3>
-        <p>Point-of-sale fixtures and product displays that enhance the shopping experience and drive sales.</p>
+
+        <h3 class="h">
+          Retail Displays
+        </h3>
+
+        <p>
+          Point-of-sale fixtures and product displays that enhance the shopping experience and drive sales.
+        </p>
+
       </div>
+
     </article>
 
+
+    <!-- 06 -->
+
     <article class="tile" tabindex="0">
+
       <div class="top">
+
         <span>/06</span>
+
         <svg viewBox="0 0 24 24">
+
           <path d="M10 6l1.8 5.2L17 13l-5.2 1.8L10 20l-1.8-5.2L3 13l5.2-1.8zM18 3v5M15.5 5.5h5"/>
+
         </svg>
+
       </div>
+
+
       <div>
-        <h3 class="h">Promotions &amp; Gifts</h3>
-        <p>Branded merchandise, promotional items and gifts that extend your brand presence beyond the display.</p>
+
+        <h3 class="h">
+          Promotions &amp; Gifts
+        </h3>
+
+        <p>
+          Branded merchandise, promotional items and gifts that extend your brand presence beyond the display.
+        </p>
+
       </div>
+
     </article>
 
+
+    <!-- 07 -->
+
     <article class="tile" tabindex="0">
+
       <div class="top">
+
         <span>/07</span>
+
         <svg viewBox="0 0 24 24">
+
           <path d="M14.5 3.5l6 6-3 3-6-6zM12 9l-8 9.5 1.5 1.5L15 12"/>
+
         </svg>
+
       </div>
+
+
       <div>
-        <h3 class="h">Branding Installations</h3>
-        <p>Custom environmental branding that transforms interiors and exteriors into brand experiences.</p>
+
+        <h3 class="h">
+          Branding Installations
+        </h3>
+
+        <p>
+          Custom environmental branding that transforms interiors and exteriors into brand experiences.
+        </p>
+
       </div>
+
     </article>
 
+
+    <!-- 08 -->
+
     <article class="tile" tabindex="0">
+
       <div class="top">
+
         <span>/08</span>
+
         <svg viewBox="0 0 24 24">
+
           <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9zM4 7.5l8 4.5 8-4.5M12 12v9"/>
+
         </svg>
+
       </div>
+
+
       <div>
-        <h3 class="h">Design &amp; Print</h3>
-        <p>End-to-end design and large-format printing services for all your branding and promotional needs.</p>
+
+        <h3 class="h">
+          Design &amp; Print
+        </h3>
+
+        <p>
+          End-to-end design and large-format printing services for all your branding and promotional needs.
+        </p>
+
       </div>
+
     </article>
+
 
   </div>
+
 </section>
+
+
+<!-- =========================
+     FEATURED PROJECTS
+========================= -->
 
 <section id="work">
 
-  <h2 class="sec-t h">Featured Projects</h2>
+  <h2 class="sec-t h">
+    Featured Projects
+  </h2>
+
 
   <div class="work">
 
     <figure>
-      <img src="assets/indoor.jpg" alt="Indoor signage" loading="lazy">
-      <figcaption>Indoor signage</figcaption>
+
+      <img
+        src="assets/indoor.jpg"
+        alt="Indoor signage"
+        loading="lazy"
+      >
+
+      <figcaption>
+        Indoor signage
+      </figcaption>
+
     </figure>
 
-    <figure>
-      <img src="assets/outdoor.jpg" alt="Outdoor signage" loading="lazy">
-      <figcaption>Outdoor signage</figcaption>
-    </figure>
 
     <figure>
-      <img src="assets/exhibition.jpg" alt="Exhibition stands" loading="lazy">
-      <figcaption>Exhibition stands</figcaption>
+
+      <img
+        src="assets/outdoor.jpg"
+        alt="Outdoor signage"
+        loading="lazy"
+      >
+
+      <figcaption>
+        Outdoor signage
+      </figcaption>
+
     </figure>
 
-    <figure>
-      <img src="assets/retail.jpg" alt="Retail and corporate branding" loading="lazy">
-      <figcaption>Retail &amp; corporate branding</figcaption>
-    </figure>
 
     <figure>
-      <img src="assets/promo.jpg" alt="Promotions and gifts" loading="lazy">
-      <figcaption>Promotions &amp; gifts</figcaption>
+
+      <img
+        src="assets/exhibition.jpg"
+        alt="Exhibition stands"
+        loading="lazy"
+      >
+
+      <figcaption>
+        Exhibition stands
+      </figcaption>
+
     </figure>
 
+
     <figure>
-      <img src="assets/print.jpg" alt="Design and print" loading="lazy">
-      <figcaption>Design &amp; print</figcaption>
+
+      <img
+        src="assets/retail.jpg"
+        alt="Retail and corporate branding"
+        loading="lazy"
+      >
+
+      <figcaption>
+        Retail &amp; corporate branding
+      </figcaption>
+
     </figure>
+
+
+    <figure>
+
+      <img
+        src="assets/promo.jpg"
+        alt="Promotions and gifts"
+        loading="lazy"
+      >
+
+      <figcaption>
+        Promotions &amp; gifts
+      </figcaption>
+
+    </figure>
+
+
+    <figure>
+
+      <img
+        src="assets/print.jpg"
+        alt="Design and print"
+        loading="lazy"
+      >
+
+      <figcaption>
+        Design &amp; print
+      </figcaption>
+
+    </figure>
+
 
   </div>
+
 </section>
+
+
+<!-- =========================
+     WHY SILVERLINE
+========================= -->
 
 <section id="about">
 
-  <p class="mono" style="color:var(--mute)">Make your mark</p>
+  <p class="mono" style="color:var(--mute)">
+    Make your mark
+  </p>
 
-  <h2 class="sec-t h" style="margin:36px 0 0">
+
+  <h2
+    class="sec-t h"
+    style="margin:36px 0 0"
+  >
+
     Why <span class="sv">Silverline</span>
+
   </h2>
+
 
   <div class="why">
 
+
     <div>
 
-      <div class="diamond" aria-hidden="true"></div>
+      <div
+        class="diamond"
+        aria-hidden="true"
+      ></div>
+
 
       <p>
+
         One partner, zero hand-offs. Our in-house design team, production and global supplier network cover signage, exhibition stands, branding and print — so you brief one partner instead of fielding three vendors and a production coordinator.
+
       </p>
 
+
       <p class="why-copy">
+
         We transform your brand idea into physical advertising experiences. Something people see, touch and remember in environments engineered to get your brand noticed.
+
       </p>
 
     </div>
 
+
     <div>
 
-      <div class="row">
-        <span class="mono">01</span>
-        <h3 class="h sv">Vision</h3>
-        <p>We begin with the idea behind the brand — where it needs to go and what it must say — before a single panel is built.</p>
-      </div>
 
       <div class="row">
-        <span class="mono">02</span>
-        <h3 class="h">Craft</h3>
-        <p>Materials, joinery, light and finish. We obsess over the details most people will feel but never notice.</p>
+
+        <span class="mono">
+          01
+        </span>
+
+        <h3 class="h sv">
+          Vision
+        </h3>
+
+        <p>
+          We begin with the idea behind the brand — where it needs to go and what it must say — before a single panel is built.
+        </p>
+
       </div>
 
-      <div class="row">
-        <span class="mono">03</span>
-        <h3 class="h">Impact</h3>
-        <p>Presence is measured in moments. We build environments that stop people, hold attention and get remembered.</p>
-      </div>
 
       <div class="row">
-        <span class="mono">04</span>
-        <h3 class="h sv">Precision</h3>
-        <p>From technical drawings to on-site installation, every millimetre is planned, checked and delivered on time.</p>
+
+        <span class="mono">
+          02
+        </span>
+
+        <h3 class="h">
+          Craft
+        </h3>
+
+        <p>
+          Materials, joinery, light and finish. We obsess over the details most people will feel but never notice.
+        </p>
+
       </div>
+
+
+      <div class="row">
+
+        <span class="mono">
+          03
+        </span>
+
+        <h3 class="h">
+          Impact
+        </h3>
+
+        <p>
+          Presence is measured in moments. We build environments that stop people, hold attention and get remembered.
+        </p>
+
+      </div>
+
+
+      <div class="row">
+
+        <span class="mono">
+          04
+        </span>
+
+        <h3 class="h sv">
+          Precision
+        </h3>
+
+        <p>
+          From technical drawings to on-site installation, every millimetre is planned, checked and delivered on time.
+        </p>
+
+      </div>
+
 
     </div>
 
   </div>
+
 </section>
+
+
+<!-- =========================
+     PROCESS
+========================= -->
 
 <section id="process">
 
-  <h2 class="sec-t h" style="margin-bottom:60px">
+  <h2
+    class="sec-t h"
+    style="margin-bottom:60px"
+  >
     How we do it
   </h2>
 
+
   <div class="steps">
 
-    <div class="step">
-      <span class="n h">01</span>
-      <h3 class="h">Discover</h3>
-      <p>We listen. Your brand, your goals, your space — we map what presence must achieve.</p>
-    </div>
 
     <div class="step">
-      <span class="n h">02</span>
-      <h3 class="h">Create</h3>
-      <p>Concepts become drawings, materials and light. You see exactly what your brand will feel like.</p>
+
+      <span class="n h">
+        01
+      </span>
+
+      <h3 class="h">
+        Discover
+      </h3>
+
+      <p>
+        We listen. Your brand, your goals, your space — we map what presence must achieve.
+      </p>
+
     </div>
 
-    <div class="step">
-      <span class="n h">03</span>
-      <h3 class="h">Produce</h3>
-      <p>Our production turns approved designs into build-quality reality, checked to the last detail.</p>
-    </div>
 
     <div class="step">
-      <span class="n h">04</span>
-      <h3 class="h">Deliver</h3>
-      <p>We install, hand over and stand behind the result. On time, on site, ready to be seen.</p>
+
+      <span class="n h">
+        02
+      </span>
+
+      <h3 class="h">
+        Create
+      </h3>
+
+      <p>
+        Concepts become drawings, materials and light. You see exactly what your brand will feel like.
+      </p>
+
     </div>
+
+
+    <div class="step">
+
+      <span class="n h">
+        03
+      </span>
+
+      <h3 class="h">
+        Produce
+      </h3>
+
+      <p>
+        Our production turns approved designs into build-quality reality, checked to the last detail.
+      </p>
+
+    </div>
+
+
+    <div class="step">
+
+      <span class="n h">
+        04
+      </span>
+
+      <h3 class="h">
+        Deliver
+      </h3>
+
+      <p>
+        We install, hand over and stand behind the result. On time, on site, ready to be seen.
+      </p>
+
+    </div>
+
 
   </div>
+
 </section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
 
 <section id="contact" class="contact">
 
   <h2 class="h">
-    Tell us where your <span class="sv">brand needs to be.</span>
+
+    Tell us where your
+    <span class="sv">brand needs to be.</span>
+
   </h2>
+
 
   <form id="contactForm">
 
-    <div class="f">
-      <label for="n">Name</label>
-      <input id="n" name="name" placeholder="Your name" autocomplete="name">
-    </div>
 
     <div class="f">
-      <label for="c">Company</label>
-      <input id="c" name="company" placeholder="Company / brand" autocomplete="organization">
+
+      <label for="n">
+        Name
+      </label>
+
+      <input
+        id="n"
+        name="name"
+        placeholder="Your name"
+        autocomplete="name"
+      >
+
     </div>
 
-    <div class="f">
-      <label for="e">Email *</label>
-      <input id="e" name="email" type="email" required placeholder="you@company.com" autocomplete="email">
-    </div>
 
     <div class="f">
-      <label for="p">Phone</label>
-      <input id="p" name="phone" type="tel" placeholder="+971 00 000 0000" autocomplete="tel">
+
+      <label for="c">
+        Company
+      </label>
+
+      <input
+        id="c"
+        name="company"
+        placeholder="Company / brand"
+        autocomplete="organization"
+      >
+
     </div>
+
+
+    <div class="f">
+
+      <label for="e">
+        Email *
+      </label>
+
+      <input
+        id="e"
+        name="email"
+        type="email"
+        required
+        placeholder="you@company.com"
+        autocomplete="email"
+      >
+
+    </div>
+
+
+    <div class="f">
+
+      <label for="p">
+        Phone
+      </label>
+
+      <input
+        id="p"
+        name="phone"
+        type="tel"
+        placeholder="+971 00 000 0000"
+        autocomplete="tel"
+      >
+
+    </div>
+
 
     <div class="f full">
-      <label for="s">Branding solution</label>
 
-      <select id="s" name="branding_solution">
-        <option value="" selected>Select a branding solution</option>
-        <option>Promotional Stands</option>
-        <option>Exhibition Displays</option>
-        <option>Signage</option>
-        <option>Banners &amp; Large Format</option>
-        <option>Retail Displays</option>
-        <option>Promotions &amp; Gifts</option>
-        <option>Branding Installations</option>
-        <option>Design &amp; Print</option>
+      <label for="s">
+        Branding solution
+      </label>
+
+      <select
+        id="s"
+        name="branding_solution"
+      >
+
+        <option value="" selected>
+          Select a branding solution
+        </option>
+
+        <option>
+          Promotional Stands
+        </option>
+
+        <option>
+          Exhibition Displays
+        </option>
+
+        <option>
+          Signage
+        </option>
+
+        <option>
+          Banners &amp; Large Format
+        </option>
+
+        <option>
+          Retail Displays
+        </option>
+
+        <option>
+          Promotions &amp; Gifts
+        </option>
+
+        <option>
+          Branding Installations
+        </option>
+
+        <option>
+          Design &amp; Print
+        </option>
+
       </select>
+
     </div>
+
 
     <div class="f full">
-      <label for="m">Message</label>
-      <textarea id="m" name="message" placeholder="Tell us about the space, the date, the idea…"></textarea>
+
+      <label for="m">
+        Message
+      </label>
+
+      <textarea
+        id="m"
+        name="message"
+        placeholder="Tell us about the space, the date, the idea…"
+      ></textarea>
+
     </div>
 
-    <input type="hidden" name="_subject" value="New Silverline Advertising website enquiry">
-    <input type="hidden" name="_url" value="https://www.silverlinead.com/">
-    <input type="text" name="_honey" style="display:none">
 
-    <div class="form-status" id="contactStatus"></div>
+    <input
+      type="hidden"
+      name="_subject"
+      value="New Silverline Advertising website enquiry"
+    >
 
-    <button class="btn solid" type="submit">
-      Start a project <span aria-hidden="true">↗</span>
+    <input
+      type="hidden"
+      name="_url"
+      value="https://www.silverlinead.com/"
+    >
+
+    <input
+      type="text"
+      name="_honey"
+      style="display:none"
+    >
+
+
+    <div
+      class="form-status"
+      id="contactStatus"
+    ></div>
+
+
+    <button
+      class="btn solid"
+      type="submit"
+    >
+
+      Start a project
+
+      <span aria-hidden="true">
+        ↗
+      </span>
+
     </button>
 
+
   </form>
+
 </section>
+
 
 </main>
 
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
+
 
   <div class="fgrid">
 
+
     <div class="contact-l">
 
-      <img src="assets/logo-stacked.png" alt="Silverline Advertising">
+
+      <img
+        src="assets/logo-stacked.png"
+        alt="Silverline Advertising"
+      >
+
 
       <p>
+
         <a href="mailto:info@silverlinead.com">
           info@silverlinead.com
         </a>
+
       </p>
 
+
       <p>
+
         <a href="tel:+971522596385">
           +971 52 259 6385
         </a>
+
       </p>
 
-      <p>www.silverlinead.com</p>
 
-      <p>Dubai, UAE</p>
+      <p>
+        www.silverlinead.com
+      </p>
+
+
+      <p>
+        Dubai, UAE
+      </p>
+
 
       <div class="soc">
 
-        <a href="#" aria-label="Instagram">
+
+        <a
+          href="#"
+          aria-label="Instagram"
+        >
+
           <svg viewBox="0 0 24 24">
-            <rect x="3" y="3" width="18" height="18" rx="5"/>
-            <circle cx="12" cy="12" r="4"/>
-            <circle cx="17.5" cy="6.5" r=".6"/>
+
+            <rect
+              x="3"
+              y="3"
+              width="18"
+              height="18"
+              rx="5"
+            />
+
+            <circle
+              cx="12"
+              cy="12"
+              r="4"
+            />
+
+            <circle
+              cx="17.5"
+              cy="6.5"
+              r=".6"
+            />
+
           </svg>
+
         </a>
 
-        <a href="#" aria-label="LinkedIn">
+
+        <a
+          href="#"
+          aria-label="LinkedIn"
+        >
+
           <svg viewBox="0 0 24 24">
+
             <path d="M6 9v10M6 5.5v.5M10 19V9m0 4c0-2 1.5-4 4-4s3.5 1.6 3.5 4v6"/>
+
           </svg>
+
         </a>
 
-        <a href="#" aria-label="Facebook">
+
+        <a
+          href="#"
+          aria-label="Facebook"
+        >
+
           <svg viewBox="0 0 24 24">
+
             <path d="M14 8h2.5V4.5H14a3.5 3.5 0 00-3.5 3.5v2.5H8V14h2.5v6h3.5v-6h2.5l.5-3.5h-3V8.5z"/>
+
           </svg>
+
         </a>
+
 
       </div>
+
     </div>
 
+
     <div class="menu-col">
-      <h4 class="h">Explore</h4>
+
+      <h4 class="h">
+        Explore
+      </h4>
+
 
       <ul>
+
         <li>
-          <a href="#services">Our Branding Solutions</a>
+          <a href="#services">
+            Our Branding Solutions
+          </a>
         </li>
 
         <li>
-          <a href="#work">Featured Projects</a>
+          <a href="#work">
+            Featured Projects
+          </a>
         </li>
 
         <li>
-          <a href="#about">Why Silverline</a>
+          <a href="#about">
+            Why Silverline
+          </a>
         </li>
 
         <li>
-          <a href="#process">How we do it</a>
+          <a href="#process">
+            How we do it
+          </a>
         </li>
 
         <li>
-          <a href="#contact">Let's Connect</a>
+          <a href="#contact">
+            Let's Connect
+          </a>
         </li>
 
         <li>
-          <a href="#" id="footerProfileLink">Company Profile</a>
+          <a
+            href="#"
+            id="footerProfileLink"
+          >
+            Company Profile
+          </a>
         </li>
+
       </ul>
+
     </div>
 
+
     <div class="menu-col">
-      <h4 class="h">Contact</h4>
+
+      <h4 class="h">
+        Contact
+      </h4>
+
 
       <ul>
+
         <li>
+
           <a href="mailto:info@silverlinead.com">
             info@silverlinead.com
           </a>
+
         </li>
 
         <li>
+
           <a href="tel:+971522596385">
             +971 52 259 6385
           </a>
+
         </li>
 
-        <li>Dubai, UAE</li>
+        <li>
+          Dubai, UAE
+        </li>
+
       </ul>
+
     </div>
+
 
   </div>
 
+
   <div class="fbar mono">
+
 
     <span>
       © 2026 Silverline Advertising. All rights reserved.
     </span>
 
+
     <span>
       Make your brand unmissable.
     </span>
 
-    <button class="top-b" aria-label="Back to top" onclick="scrollTo(0,0)">
+
+    <button
+      class="top-b"
+      aria-label="Back to top"
+      onclick="scrollTo(0,0)"
+    >
       ↑
     </button>
+
 
   </div>
 
 </footer>
 
-<!-- COMPANY PROFILE MODAL -->
 
-<div class="profile-modal" id="profile" aria-hidden="true">
+<!-- =========================
+     COMPANY PROFILE MODAL
+========================= -->
 
-  <div class="profile-card" role="dialog" aria-modal="true" aria-labelledby="profileTitle">
+<div
+  class="profile-modal"
+  id="profile"
+  aria-hidden="true"
+>
 
-    <button class="profile-close" type="button" id="profileClose" aria-label="Close">
+
+  <div
+    class="profile-card"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="profileTitle"
+  >
+
+
+    <button
+      class="profile-close"
+      type="button"
+      id="profileClose"
+      aria-label="Close"
+    >
       ×
     </button>
 
+
     <div id="profileGate">
 
-      <p class="eyebrow mono">Silverline Advertising</p>
 
-      <h2 class="h" id="profileTitle">
-        Company <span class="sv">Profile</span>
-      </h2>
-
-      <p>
-        Enter your email address to access our company profile and learn more about Silverline Advertising.
+      <p class="eyebrow mono">
+        Silverline Advertising
       </p>
 
-      <form class="profile-form" id="profileForm">
+
+      <h2
+        class="h"
+        id="profileTitle"
+      >
+
+        Company
+        <span class="sv">
+          Profile
+        </span>
+
+      </h2>
+
+
+      <p>
+
+        Enter your email address to access our company profile and learn more about Silverline Advertising.
+
+      </p>
+
+
+      <form
+        class="profile-form"
+        id="profileForm"
+      >
+
 
         <div class="f">
-          <label for="profileEmail">Email *</label>
+
+          <label for="profileEmail">
+            Email *
+          </label>
 
           <input
             id="profileEmail"
@@ -1621,38 +2803,92 @@ footer{
             placeholder="you@company.com"
             autocomplete="email"
           >
+
         </div>
 
-        <input type="hidden" name="_subject" value="Silverline Advertising — Company Profile Request">
-        <input type="hidden" name="_url" value="https://www.silverlinead.com/">
-        <input type="text" name="_honey" style="display:none">
 
-        <button class="btn solid" type="submit">
-          Access Company Profile <span aria-hidden="true">↗</span>
+        <input
+          type="hidden"
+          name="_subject"
+          value="Silverline Advertising — Company Profile Request"
+        >
+
+
+        <input
+          type="hidden"
+          name="_url"
+          value="https://www.silverlinead.com/"
+        >
+
+
+        <input
+          type="text"
+          name="_honey"
+          style="display:none"
+        >
+
+
+        <button
+          class="btn solid"
+          type="submit"
+        >
+
+          Access Company Profile
+
+          <span aria-hidden="true">
+            ↗
+          </span>
+
         </button>
 
-        <div class="form-status" id="profileStatus"></div>
+
+        <div
+          class="form-status"
+          id="profileStatus"
+        ></div>
+
 
       </form>
 
+
       <p class="profile-note">
+
         Your email is used to process your company profile request.
+
       </p>
+
 
     </div>
 
-    <div class="profile-success" id="profileSuccess">
 
-      <p class="eyebrow mono">Access granted</p>
+    <div
+      class="profile-success"
+      id="profileSuccess"
+    >
+
+
+      <p class="eyebrow mono">
+        Access granted
+      </p>
+
 
       <h2 class="h">
-        Your profile is <span class="sv">ready.</span>
+
+        Your profile is
+        <span class="sv">
+          ready.
+        </span>
+
       </h2>
 
+
       <p>
+
         Thank you for your interest in Silverline Advertising.
         You can now view our company profile.
+
       </p>
+
 
       <a
         class="btn solid"
@@ -1660,17 +2896,30 @@ footer{
         target="_blank"
         rel="noopener"
       >
-        Open Company Profile <span aria-hidden="true">↗</span>
+
+        Open Company Profile
+
+        <span aria-hidden="true">
+          ↗
+        </span>
+
       </a>
+
 
     </div>
 
+
   </div>
+
 </div>
+
 
 <script>
 
-/* MARQUEE */
+
+/* =========================
+   MARQUEE
+========================= */
 
 const track = document.getElementById('track');
 
@@ -1679,196 +2928,361 @@ if(track){
 }
 
 
-/* COMPANY PROFILE MODAL */
+/* =========================
+   COMPANY PROFILE MODAL
+========================= */
 
-const profileModal = document.getElementById('profile');
-const profileOpen = document.getElementById('profileOpen');
-const profileClose = document.getElementById('profileClose');
-const footerProfileLink = document.getElementById('footerProfileLink');
+const profileModal =
+  document.getElementById('profile');
+
+const profileOpen =
+  document.getElementById('profileOpen');
+
+const profileClose =
+  document.getElementById('profileClose');
+
+const footerProfileLink =
+  document.getElementById('footerProfileLink');
+
 
 function openProfile(){
+
   profileModal.classList.add('open');
-  profileModal.setAttribute('aria-hidden','false');
-  document.body.classList.add('modal-open');
+
+  profileModal.setAttribute(
+    'aria-hidden',
+    'false'
+  );
+
+  document.body.classList.add(
+    'modal-open'
+  );
 
   setTimeout(function(){
-    document.getElementById('profileEmail').focus();
+
+    document
+      .getElementById('profileEmail')
+      .focus();
+
   },100);
+
 }
+
 
 function closeProfile(){
+
   profileModal.classList.remove('open');
-  profileModal.setAttribute('aria-hidden','true');
-  document.body.classList.remove('modal-open');
+
+  profileModal.setAttribute(
+    'aria-hidden',
+    'true'
+  );
+
+  document.body.classList.remove(
+    'modal-open'
+  );
+
 }
 
-profileOpen.addEventListener('click',openProfile);
-profileClose.addEventListener('click',closeProfile);
-footerProfileLink.addEventListener('click',function(e){
-  e.preventDefault();
-  openProfile();
-});
 
-profileModal.addEventListener('click',function(e){
-  if(e.target === profileModal){
-    closeProfile();
+profileOpen.addEventListener(
+  'click',
+  openProfile
+);
+
+
+profileClose.addEventListener(
+  'click',
+  closeProfile
+);
+
+
+footerProfileLink.addEventListener(
+  'click',
+  function(e){
+
+    e.preventDefault();
+
+    openProfile();
+
   }
-});
+);
 
-document.addEventListener('keydown',function(e){
-  if(e.key === 'Escape' && profileModal.classList.contains('open')){
-    closeProfile();
+
+profileModal.addEventListener(
+  'click',
+  function(e){
+
+    if(e.target === profileModal){
+      closeProfile();
+    }
+
   }
-});
+);
 
 
-/* COMPANY PROFILE EMAIL GATE */
+document.addEventListener(
+  'keydown',
+  function(e){
 
-const profileForm = document.getElementById('profileForm');
-const profileStatus = document.getElementById('profileStatus');
-const profileGate = document.getElementById('profileGate');
-const profileSuccess = document.getElementById('profileSuccess');
+    if(
+      e.key === 'Escape' &&
+      profileModal.classList.contains('open')
+    ){
 
-profileForm.addEventListener('submit',async function(e){
-
-  e.preventDefault();
-
-  const email = document.getElementById('profileEmail').value.trim();
-
-  if(!email){
-    return;
-  }
-
-  const button = profileForm.querySelector('button');
-
-  button.disabled = true;
-  button.innerHTML = 'Sending…';
-
-  profileStatus.className = 'form-status show';
-  profileStatus.textContent = 'Please wait…';
-
-  const formData = new FormData(profileForm);
-
-  const data = {};
-
-  formData.forEach(function(value,key){
-    data[key] = value;
-  });
-
-  try{
-
-    const response = await fetch(
-      'https://formsubmit.co/ajax/caroan@silverlinead.com',
-      {
-        method:'POST',
-        headers:{
-          'Content-Type':'application/json',
-          'Accept':'application/json'
-        },
-        body:JSON.stringify(data)
-      }
-    );
-
-    const result = await response.json();
-
-    if(result.success){
-
-      profileGate.style.display = 'none';
-      profileSuccess.classList.add('show');
-
-    }else{
-
-      throw new Error('Submission failed');
+      closeProfile();
 
     }
 
-  }catch(error){
-
-    profileStatus.className = 'form-status show';
-    profileStatus.textContent =
-      'Something went wrong. Please try again.';
-
-    button.disabled = false;
-    button.innerHTML =
-      'Access Company Profile <span aria-hidden="true">↗</span>';
   }
+);
 
-});
+
+/* =========================
+   COMPANY PROFILE EMAIL
+========================= */
+
+const profileForm =
+  document.getElementById('profileForm');
+
+const profileStatus =
+  document.getElementById('profileStatus');
+
+const profileGate =
+  document.getElementById('profileGate');
+
+const profileSuccess =
+  document.getElementById('profileSuccess');
 
 
-/* CONTACT FORM */
+profileForm.addEventListener(
+  'submit',
+  function(e){
 
-const contactForm = document.getElementById('contactForm');
-const contactStatus = document.getElementById('contactStatus');
+    e.preventDefault();
 
-contactForm.addEventListener('submit',async function(e){
 
-  e.preventDefault();
+    const email =
+      document
+        .getElementById('profileEmail')
+        .value
+        .trim();
 
-  const button = contactForm.querySelector('button');
 
-  button.disabled = true;
-  button.innerHTML = 'Sending…';
+    if(!email){
 
-  contactStatus.className = 'form-status show';
-  contactStatus.textContent = 'Please wait…';
+      profileStatus.className =
+        'form-status show';
 
-  const formData = new FormData(contactForm);
+      profileStatus.textContent =
+        'Please enter your email address.';
 
-  const data = {};
+      return;
 
-  formData.forEach(function(value,key){
-    data[key] = value;
-  });
+    }
 
-  try{
 
-    const response = await fetch(
-      'https://formsubmit.co/ajax/caroan@silverlinead.com',
+    const button =
+      profileForm.querySelector('button');
+
+
+    button.disabled = true;
+
+    button.innerHTML =
+      'Sending…';
+
+
+    profileStatus.className =
+      'form-status show';
+
+    profileStatus.textContent =
+      'Please wait…';
+
+
+    const formData =
+      new FormData(profileForm);
+
+
+    fetch(
+      'https://formsubmit.co/caroan@silverlinead.com',
       {
         method:'POST',
+
+        body:formData,
+
         headers:{
-          'Content-Type':'application/json',
           'Accept':'application/json'
-        },
-        body:JSON.stringify(data)
+        }
+      }
+    )
+
+    .then(function(response){
+
+      if(!response.ok){
+        throw new Error(
+          'Submission failed'
+        );
+      }
+
+      return response.json();
+
+    })
+
+    .then(function(result){
+
+      profileGate.style.display =
+        'none';
+
+      profileSuccess.classList.add(
+        'show'
+      );
+
+    })
+
+    .catch(function(error){
+
+      profileStatus.className =
+        'form-status show';
+
+      profileStatus.textContent =
+        'Something went wrong. Please try again or email info@silverlinead.com directly.';
+
+      button.disabled = false;
+
+      button.innerHTML =
+        'Access Company Profile <span aria-hidden="true">↗</span>';
+
+    });
+
+  }
+);
+
+
+/* =========================
+   CONTACT FORM
+========================= */
+
+const contactForm =
+  document.getElementById('contactForm');
+
+const contactStatus =
+  document.getElementById('contactStatus');
+
+
+contactForm.addEventListener(
+  'submit',
+  async function(e){
+
+    e.preventDefault();
+
+
+    const button =
+      contactForm.querySelector('button');
+
+
+    button.disabled = true;
+
+    button.innerHTML =
+      'Sending…';
+
+
+    contactStatus.className =
+      'form-status show';
+
+    contactStatus.textContent =
+      'Please wait…';
+
+
+    const formData =
+      new FormData(contactForm);
+
+
+    const data = {};
+
+
+    formData.forEach(
+      function(value,key){
+
+        data[key] = value;
+
       }
     );
 
-    const result = await response.json();
 
-    if(result.success){
+    try{
 
-      contactStatus.className = 'form-status show success';
+      const response =
+        await fetch(
+          'https://formsubmit.co/ajax/caroan@silverlinead.com',
+          {
+            method:'POST',
+
+            headers:{
+              'Content-Type':
+                'application/json',
+
+              'Accept':
+                'application/json'
+            },
+
+            body:
+              JSON.stringify(data)
+          }
+        );
+
+
+      const result =
+        await response.json();
+
+
+      if(result.success){
+
+        contactStatus.className =
+          'form-status show success';
+
+        contactStatus.textContent =
+          'Thank you. Your enquiry has been sent — we’ll be in touch soon.';
+
+
+        contactForm.reset();
+
+
+        button.disabled = false;
+
+        button.innerHTML =
+          'Start a project <span aria-hidden="true">↗</span>';
+
+
+      }else{
+
+        throw new Error(
+          'Submission failed'
+        );
+
+      }
+
+
+    }catch(error){
+
+      contactStatus.className =
+        'form-status show';
+
       contactStatus.textContent =
-        'Thank you. Your enquiry has been sent — we’ll be in touch soon.';
+        'Something went wrong. Please try again or email info@silverlinead.com directly.';
 
-      contactForm.reset();
 
       button.disabled = false;
+
       button.innerHTML =
         'Start a project <span aria-hidden="true">↗</span>';
 
-    }else{
-
-      throw new Error('Submission failed');
-
     }
 
-  }catch(error){
-
-    contactStatus.className = 'form-status show';
-    contactStatus.textContent =
-      'Something went wrong. Please try again or email info@silverlinead.com directly.';
-
-    button.disabled = false;
-    button.innerHTML =
-      'Start a project <span aria-hidden="true">↗</span>';
   }
-
-});
+);
 
 </script>
+
 
 </body>
 </html>
