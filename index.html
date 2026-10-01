@@ -6,7 +6,7 @@
 
 <title>Silverline Advertising — Make Your Brand Unmissable</title>
 
-<meta name="description" content="Silverline Advertising — promotional stands, exhibition displays, signage, retail displays and event branding that make your brand unmissable.">
+<meta name="description" content="Silverline Advertising — UAE-based branding solutions: exhibition displays, signage, retail displays, promotions and events that make your brand unmissable.">
 
 <link rel="canonical" href="https://www.silverlinead.com/">
 <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -16,7 +16,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Silverline Advertising">
 <meta property="og:title" content="Silverline Advertising — Make Your Brand Unmissable">
-<meta property="og:description" content="Promotional stands, exhibition displays, signage, retail displays and event branding that make your brand unmissable.">
+<meta property="og:description" content="Branding solutions for exhibitions, signage, retail, promotions and events that make your brand unmissable.">
 <meta property="og:url" content="https://www.silverlinead.com/">
 <meta property="og:image" content="https://www.silverlinead.com/assets/og.jpg">
 
@@ -30,7 +30,7 @@
   "alternateName":"Silverline Advertising LLC",
   "url":"https://www.silverlinead.com/",
   "logo":"https://www.silverlinead.com/assets/icon.png",
-  "description":"Promotional stands, exhibition displays, signage and event branding",
+  "description":"Branding solutions: exhibition displays, signage, retail displays, promotions and events",
   "address":{
     "@type":"PostalAddress",
     "addressLocality":"Dubai",
@@ -784,6 +784,10 @@ header .btn{
   color:transparent;
 }
 
+.why-copy:first-child{
+  margin-top:0;
+}
+
 .why-copy{
   margin-top:32px;
 
@@ -1296,7 +1300,7 @@ footer{
    RESPONSIVE
 ========================= */
 
-.nav-cta{display:none;}
+.nav-cta,.nav-profile{display:none;}
 @media(max-width:600px){ header nav .nav-cta{display:block;} }
 
 /* Hamburger button (hidden on desktop) */
@@ -1361,6 +1365,10 @@ footer{
 
   header nav.open{
     display:flex;
+  }
+
+  header nav .nav-profile{
+    display:block;
   }
 
   header nav a{
@@ -1607,6 +1615,8 @@ footer{
 
     <a href="#contact" class="nav-cta">Let's Connect</a>
 
+    <a href="#" class="nav-profile" id="navProfileLink">Company Profile</a>
+
   </nav>
 
 
@@ -1721,7 +1731,7 @@ footer{
 
     <span>Retail Displays</span>
 
-    <span>Event Branding</span>
+    <span>Promotions &amp; Events</span>
 
     <span>Branding Installations</span>
 
@@ -1929,11 +1939,11 @@ footer{
       <div>
 
         <h3 class="h">
-          Promotions &amp; Gifts
+          Promotions &amp; Events
         </h3>
 
         <p>
-          Branded merchandise, promotional items and gifts that extend your brand presence beyond the display.
+          Branded merchandise, promotional items, gifts and event branding that extend your brand presence beyond the display.
         </p>
 
       </div>
@@ -2087,12 +2097,12 @@ footer{
 
       <img
         src="assets/promo.jpg"
-        alt="Promotions and gifts"
+        alt="Banners and large format"
         loading="lazy"
       >
 
       <figcaption>
-        Promotions &amp; gifts
+        Banners &amp; large format
       </figcaption>
 
     </figure>
@@ -2144,7 +2154,7 @@ footer{
 
     <div>
 
-      <p>
+      <p class="why-copy">
 
         One partner, zero hand-offs. Our in-house design team, production and global supplier network cover signage, exhibition stands, branding and print — so you brief one partner instead of fielding three vendors and a production coordinator.
 
@@ -2448,7 +2458,7 @@ footer{
         </option>
 
         <option>
-          Promotions &amp; Gifts
+          Promotions &amp; Events
         </option>
 
         <option>
@@ -2924,7 +2934,7 @@ footer{
 
       <a
         class="btn solid"
-        href="assets/company-profile.pptx"
+        href="assets/company-profile.pdf"
         target="_blank"
         rel="noopener"
       >
@@ -3312,6 +3322,11 @@ function setMenu(open){
   menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
   menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
 }
+
+document.getElementById('navProfileLink').addEventListener('click', function(e){
+  e.preventDefault();
+  openProfile();
+});
 
 menuToggle.addEventListener('click', function(){
   setMenu(!mainNav.classList.contains('open'));
