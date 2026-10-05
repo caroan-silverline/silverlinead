@@ -386,28 +386,6 @@ header .btn{
   background-position:center;
 }
 
-.hero:before,
-.hero:after{
-  content:"";
-
-  position:absolute;
-
-  top:0;
-  bottom:44px;
-
-  width:1px;
-
-  background:rgba(255,255,255,.08);
-}
-
-.hero:before{
-  left:24px;
-}
-
-.hero:after{
-  right:24px;
-}
-
 .hero-in{
   padding-top:150px;
   padding-bottom:34px;
@@ -1186,9 +1164,9 @@ footer{
 .fgrid{
   display:grid;
 
-  grid-template-columns:2fr 1fr 1fr;
+  grid-template-columns:1fr 1fr;
 
-  gap:40px;
+  gap:60px;
 
   margin-bottom:56px;
 }
@@ -1501,7 +1479,11 @@ footer{
   }
 
   .contact-l{
-    grid-column:1/-1;
+    grid-column:auto;
+  }
+
+  .fgrid .menu-col{
+    grid-column:auto;
   }
 
   .sec-t{
@@ -1569,6 +1551,10 @@ footer{
     grid-template-columns:1fr;
   }
 
+  .fgrid .menu-col{
+    order:-1;
+  }
+
   .hero-bar{
     display:none;
   }
@@ -1578,7 +1564,16 @@ footer{
   }
 
   .hero h1{
-    max-width:7ch;
+    max-width:none;
+    width:100%;
+    font-size:clamp(42px,7.5vw,56px);
+  }
+
+  .hero .btn{
+    display:flex;
+    width:100%;
+    margin-left:0!important;
+    margin-bottom:12px;
   }
 
   .btn{
