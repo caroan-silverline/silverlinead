@@ -43,35 +43,39 @@
     "email":"info@silverlinead.com"
   }
 }
+</script>
 
 
+<script>
 /* =========================
    OPENING BRAND ANIMATION
 ========================= */
 
-window.addEventListener('DOMContentLoaded', function(){
-
+function hideIntro(){
   const intro = document.getElementById('intro');
 
-  if(!intro){
+  if(!intro || intro.classList.contains('hide')){
     return;
   }
 
-  document.body.style.overflow = 'hidden';
+  intro.classList.add('hide');
+  document.body.style.overflow = '';
 
   setTimeout(function(){
-
-    intro.classList.add('hide');
-    document.body.style.overflow = '';
-
-    setTimeout(function(){
+    if(intro && intro.parentNode){
       intro.remove();
-    }, 900);
+    }
+  }, 900);
+}
 
-  }, 2500);
+window.addEventListener('DOMContentLoaded', function(){
+  document.body.style.overflow = 'hidden';
 
+  setTimeout(hideIntro, 2500);
 });
 
+/* Fail-safe: the website can never remain trapped behind the intro. */
+setTimeout(hideIntro, 4500);
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1913,7 +1917,7 @@ footer{
 
     <span>Retail Displays</span>
 
-    <span>Promotions &amp; Events</span>
+    <span>EVENTS &amp; PROMOTIONS</span>
 
     <span>Branding Installations</span>
 
@@ -2640,7 +2644,7 @@ footer{
         </option>
 
         <option>
-          Promotions &amp; Events
+          EVENTS &amp; PROMOTIONS
         </option>
 
         <option>
