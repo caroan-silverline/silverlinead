@@ -46,6 +46,7 @@
 </script>
 
 <script>
+
 /* =========================
    OPENING BRAND ANIMATION
 ========================= */
@@ -72,6 +73,7 @@ window.addEventListener('DOMContentLoaded', function(){
   }, 2500);
 
 });
+
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -124,7 +126,8 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 
-body.modal-open{
+body.modal-open,
+body.menu-open{
   overflow:hidden;
 }
 
@@ -1182,13 +1185,11 @@ footer{
 .fgrid{
   display:grid;
 
-  grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);
+  grid-template-columns:2fr 1fr 1fr;
 
-  gap:clamp(50px,8vw,140px);
+  gap:40px;
 
   margin-bottom:56px;
-
-  align-items:start;
 }
 
 .fgrid img{
@@ -1275,33 +1276,6 @@ footer{
 
   stroke-linecap:round;
   stroke-linejoin:round;
-}
-
-/* Desktop Explore layout */
-.menu-col{
-  padding-top:4px;
-}
-
-.menu-col ul{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  column-gap:42px;
-  row-gap:0;
-}
-
-.menu-col li{
-  margin-bottom:20px;
-  line-height:1.35;
-}
-
-.menu-col a{
-  display:inline-block;
-  color:#aeb1b8;
-  transition:.2s;
-}
-
-.menu-col a:hover{
-  color:#fff;
 }
 
 .fbar{
@@ -1422,8 +1396,16 @@ footer{
 @media(max-width:980px){
 
   header{
-    grid-template-columns:auto auto;
+    grid-template-columns:minmax(0,1fr) auto;
     justify-content:space-between;
+  }
+
+  .logo{
+    min-width:0;
+  }
+
+  .header-btns{
+    margin-left:auto;
   }
 
   .menu-toggle{
@@ -1447,6 +1429,10 @@ footer{
     right:0;
 
     display:none;
+    max-height:calc(100vh - 70px);
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
+    overscroll-behavior:contain;
 
     flex-direction:column;
     align-items:stretch;
@@ -1583,7 +1569,8 @@ footer{
   }
 
   .tile{
-    min-height:340px;
+    min-height:0;
+    padding:26px 22px;
   }
 
   form{
@@ -1604,6 +1591,16 @@ footer{
 
   .hero h1{
     max-width:7ch;
+  }
+
+  .hero-in > .btn{
+    display:flex;
+    width:min(100%,320px);
+    margin-left:0 !important;
+  }
+
+  .hero-in > .btn + .btn{
+    margin-top:10px;
   }
 
   .btn{
@@ -1741,12 +1738,31 @@ footer{
 }
 
 @media(max-width:600px){
+  .intro{
+    overflow:hidden;
+  }
+
   .intro-brand{
-    gap:14px;
+    width:100%;
+    padding:0 16px;
+    gap:clamp(10px,4vw,14px);
   }
 
   .intro-brand img{
-    width:105px;
+    width:clamp(82px,27vw,105px);
+  }
+
+  .intro-name{
+    min-width:0;
+    max-width:calc(100vw - 135px);
+  }
+
+  .intro-name span:first-child{
+    font-size:clamp(19px,6.2vw,30px);
+  }
+
+  .intro-name span:last-child{
+    font-size:clamp(7px,2.1vw,10px);
   }
 
   @keyframes introName{
@@ -1756,7 +1772,34 @@ footer{
       transform:translateX(-8px);
     }
     100%{
-      width:205px;
+      width:min(205px,calc(100vw - 135px));
+      opacity:1;
+      transform:translateX(0);
+    }
+  }
+}
+
+@media(max-width:390px){
+  .intro-brand{
+    padding:0 12px;
+  }
+
+  .intro-brand img{
+    width:82px;
+  }
+
+  .intro-name{
+    max-width:calc(100vw - 112px);
+  }
+
+  @keyframes introName{
+    0%{
+      width:0;
+      opacity:0;
+      transform:translateX(-8px);
+    }
+    100%{
+      width:min(185px,calc(100vw - 112px));
       opacity:1;
       transform:translateX(0);
     }
@@ -1942,7 +1985,7 @@ footer{
 
     <span>Retail Displays</span>
 
-    <span>Promotions &amp; Events</span>
+    <span>EVENTS &amp; PROMOTIONS</span>
 
     <span>Branding Installations</span>
 
@@ -2669,7 +2712,7 @@ footer{
         </option>
 
         <option>
-          Promotions &amp; Events
+          EVENTS &amp; PROMOTIONS
         </option>
 
         <option>
@@ -3509,6 +3552,8 @@ function setMenu(open){
     'aria-label',
     open ? 'Close menu' : 'Open menu'
   );
+
+  document.body.classList.toggle('menu-open', open);
 
 }
 
