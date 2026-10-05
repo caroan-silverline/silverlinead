@@ -43,39 +43,35 @@
     "email":"info@silverlinead.com"
   }
 }
-</script>
 
 
-<script>
 /* =========================
    OPENING BRAND ANIMATION
 ========================= */
 
-function hideIntro(){
+window.addEventListener('DOMContentLoaded', function(){
+
   const intro = document.getElementById('intro');
 
-  if(!intro || intro.classList.contains('hide')){
+  if(!intro){
     return;
   }
 
-  intro.classList.add('hide');
-  document.body.style.overflow = '';
-
-  setTimeout(function(){
-    if(intro && intro.parentNode){
-      intro.remove();
-    }
-  }, 900);
-}
-
-window.addEventListener('DOMContentLoaded', function(){
   document.body.style.overflow = 'hidden';
 
-  setTimeout(hideIntro, 2500);
+  setTimeout(function(){
+
+    intro.classList.add('hide');
+    document.body.style.overflow = '';
+
+    setTimeout(function(){
+      intro.remove();
+    }, 900);
+
+  }, 2500);
+
 });
 
-/* Fail-safe: the website can never remain trapped behind the intro. */
-setTimeout(hideIntro, 4500);
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -384,6 +380,28 @@ header .btn{
 
   background-size:cover;
   background-position:center;
+}
+
+.hero:before,
+.hero:after{
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  bottom:44px;
+
+  width:1px;
+
+  background:rgba(255,255,255,.08);
+}
+
+.hero:before{
+  left:24px;
+}
+
+.hero:after{
+  right:24px;
 }
 
 .hero-in{
@@ -1164,11 +1182,13 @@ footer{
 .fgrid{
   display:grid;
 
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);
 
-  gap:60px;
+  gap:clamp(50px,8vw,140px);
 
   margin-bottom:56px;
+
+  align-items:start;
 }
 
 .fgrid img{
@@ -1255,6 +1275,33 @@ footer{
 
   stroke-linecap:round;
   stroke-linejoin:round;
+}
+
+/* Desktop Explore layout */
+.menu-col{
+  padding-top:4px;
+}
+
+.menu-col ul{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  column-gap:42px;
+  row-gap:0;
+}
+
+.menu-col li{
+  margin-bottom:20px;
+  line-height:1.35;
+}
+
+.menu-col a{
+  display:inline-block;
+  color:#aeb1b8;
+  transition:.2s;
+}
+
+.menu-col a:hover{
+  color:#fff;
 }
 
 .fbar{
@@ -1479,15 +1526,15 @@ footer{
   }
 
   .contact-l{
-    grid-column:auto;
-  }
-
-  .fgrid .menu-col{
-    grid-column:auto;
+    grid-column:1/-1;
   }
 
   .sec-t{
     margin-bottom:30px;
+  }
+
+  .fgrid .menu-col{
+    grid-column:1/-1;
   }
 
 }
@@ -1547,10 +1594,6 @@ footer{
     grid-template-columns:1fr;
   }
 
-  .fgrid .menu-col{
-    order:-1;
-  }
-
   .hero-bar{
     display:none;
   }
@@ -1560,16 +1603,7 @@ footer{
   }
 
   .hero h1{
-    max-width:none;
-    width:100%;
-    font-size:clamp(42px,7.5vw,56px);
-  }
-
-  .hero .btn{
-    display:flex;
-    width:100%;
-    margin-left:0!important;
-    margin-bottom:12px;
+    max-width:7ch;
   }
 
   .btn{
@@ -1908,7 +1942,7 @@ footer{
 
     <span>Retail Displays</span>
 
-    <span>EVENTS &amp; PROMOTIONS</span>
+    <span>Promotions &amp; Events</span>
 
     <span>Branding Installations</span>
 
@@ -2635,7 +2669,7 @@ footer{
         </option>
 
         <option>
-          EVENTS &amp; PROMOTIONS
+          Promotions &amp; Events
         </option>
 
         <option>
