@@ -227,8 +227,8 @@ form .btn{justify-self:start;padding:20px 44px;font-size:13px;border:0;white-spa
 
 /* FOOTER */
 footer{background:#18191c;border-top:1px solid var(--line);padding:60px var(--pad) 28px}
-.fgrid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr) minmax(0,1.3fr);gap:clamp(36px,5vw,96px);margin-bottom:56px;align-items:start}
-.fgrid img{width:clamp(130px,12vw,180px);height:auto;margin:0}
+.fgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.2fr);gap:clamp(36px,5vw,96px);margin-bottom:56px;align-items:start}
+.fgrid img{width:clamp(150px,15vw,230px);height:auto;margin:0}
 .fgrid a,.fgrid li{color:#c0c3c9;font-size:14px;line-height:1;list-style:none}
 .fgrid li{margin-bottom:16px}
 .fgrid a:hover{color:#fff}
@@ -240,9 +240,10 @@ footer{background:#18191c;border-top:1px solid var(--line);padding:60px var(--pa
 .soc a:hover{background:var(--ink);color:#141518}
 .soc svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 .menu-col{padding-top:4px}
-.menu-col ul{display:grid;grid-template-columns:1fr 1fr;column-gap:42px;row-gap:0}
+.menu-col h4{text-align:center}
+.menu-col ul{display:grid;grid-template-columns:1fr;justify-items:start;width:fit-content;max-width:100%;margin:0 auto;row-gap:0}
 .menu-col li{margin-bottom:20px;line-height:1.35}
-.menu-col a{display:inline-block;color:#aeb1b8;transition:.2s;line-height:1.35}
+.menu-col a{display:inline-block;color:#aeb1b8;transition:.2s;line-height:1.35;white-space:nowrap}
 .menu-col a:hover{color:#fff}
 .fbar{border-top:1px solid var(--line);padding-top:24px;display:flex;justify-content:space-between;align-items:center;gap:20px;color:var(--mute);font-size:10px;flex-wrap:wrap}
 .top-b{width:44px;height:44px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;background:none;color:var(--ink);cursor:pointer}
@@ -292,6 +293,8 @@ footer{background:#18191c;border-top:1px solid var(--line);padding:60px var(--pa
   .row p{grid-column:2}
   .fgrid{grid-template-columns:1fr 1fr}
   .brand-col,.contact-l,.fgrid .menu-col{grid-column:1/-1}
+  .menu-col h4{text-align:left}
+  .menu-col ul{margin:0}
   .sec-t{margin-bottom:30px}
 }
 @media(max-width:600px){
@@ -692,7 +695,7 @@ footer{background:#18191c;border-top:1px solid var(--line);padding:60px var(--pa
   <div class="fgrid">
 
     <div class="brand-col">
-      <img src="assets/logo-stacked.png" alt="Silverline Advertising">
+      <img src="assets/logo-stacked-v2.png" alt="Silverline Advertising">
     </div>
 
     <div class="contact-l">
