@@ -174,7 +174,7 @@ header .btn{padding:11px 18px;font-size:10px}
 .row{display:grid;grid-template-columns:70px 1fr 1.4fr;gap:16px;padding:26px 0;border-top:1px solid var(--line)}
 .row:last-child{border-bottom:1px solid var(--line)}
 .row .mono{color:var(--mute);padding-top:6px}
-.row h3{font-size:clamp(22px,2.6vw,38px);transition:.3s;min-width:0;overflow-wrap:break-word;padding-bottom:.06em}
+.row h3{font-size:clamp(20px,2.3vw,36px);transition:.3s;padding-bottom:.06em}
 .row p{color:#a0a3aa;font-size:clamp(14px,1.3vw,18px);line-height:1.5}
 .row:hover h3{background:var(--silver);-webkit-background-clip:text;background-clip:text;color:transparent}
 .why-copy{margin-top:32px;max-width:620px;color:#b3b6bd;font-size:clamp(15px,1.4vw,19px);line-height:1.6}
@@ -227,14 +227,15 @@ form .btn{justify-self:start;padding:20px 44px;font-size:13px;border:0;white-spa
 
 /* FOOTER */
 footer{background:#18191c;border-top:1px solid var(--line);padding:60px var(--pad) 28px}
-.fgrid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:clamp(50px,8vw,140px);margin-bottom:56px;align-items:start}
-.fgrid img{width:110px;margin:0 0 28px}
+.fgrid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr) minmax(0,1.3fr);gap:clamp(36px,5vw,96px);margin-bottom:56px;align-items:start}
+.fgrid img{width:clamp(130px,12vw,180px);height:auto;margin:0}
 .fgrid a,.fgrid li{color:#c0c3c9;font-size:14px;line-height:1;list-style:none}
 .fgrid li{margin-bottom:16px}
 .fgrid a:hover{color:#fff}
 .fgrid h4{font-size:clamp(22px,2.4vw,34px);margin-bottom:30px}
 .contact-l p{color:#c0c3c9;font-size:14px;margin-bottom:12px}
-.soc{display:flex;gap:12px;margin-top:40px}
+.contact-l{padding-top:4px}
+.soc{display:flex;gap:12px;margin-top:28px}
 .soc a{width:44px;height:44px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;transition:.2s}
 .soc a:hover{background:var(--ink);color:#141518}
 .soc svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
@@ -290,7 +291,7 @@ footer{background:#18191c;border-top:1px solid var(--line);padding:60px var(--pa
   .row{grid-template-columns:60px 1fr}
   .row p{grid-column:2}
   .fgrid{grid-template-columns:1fr 1fr}
-  .contact-l,.fgrid .menu-col{grid-column:1/-1}
+  .brand-col,.contact-l,.fgrid .menu-col{grid-column:1/-1}
   .sec-t{margin-bottom:30px}
 }
 @media(max-width:600px){
@@ -690,8 +691,12 @@ footer{background:#18191c;border-top:1px solid var(--line);padding:60px var(--pa
 
   <div class="fgrid">
 
-    <div class="contact-l">
+    <div class="brand-col">
       <img src="assets/logo-stacked.png" alt="Silverline Advertising">
+    </div>
+
+    <div class="contact-l">
+      <h4 class="h">Contact Us</h4>
 
       <p><a href="mailto:info@silverlinead.com">info@silverlinead.com</a></p>
       <p><a href="tel:+971522596385">+971 52 259 6385</a></p>
